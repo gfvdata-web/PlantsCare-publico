@@ -1,0 +1,83 @@
+site_name: PlantsCare
+site_description: Cuidado de plantas orientado a dados — sensores, dado cru e histórico de cada planta.
+site_url: https://gfvdata-web.github.io/PlantsCare-publico/
+docs_dir: conteudo
+use_directory_urls: true
+
+theme:
+  name: material
+  language: pt-BR
+  icon:
+    logo: material/sprout
+  favicon: https://cdn.jsdelivr.net/npm/@mdi/svg@7.4.47/svg/sprout.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-night
+        name: Modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search:
+      lang: pt
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.tilde
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - mdx_truly_sane_lists:
+      nested_indent: 2
+
+
+nav:
+  - "Início": index.md
+  - "Documento-mestre": PROJETO.md
+  - "Plantas":
+      - "Visão geral": plants/README.md
+      - "Aceroleira — aceroleira-01": plants/aceroleira-01.md
+      - "Jabuticabeira — jabuticabeira-01 — ⚠️ REGISTRO SEM PLANTA CORRESPONDENTE": plants/jabuticabeira-01.md
+      - "Jabuticabeira híbrida — jabuticabeira-hibrida-01": plants/jabuticabeira-hibrida-01.md
+      - "Pitangueira — pitanga-01": plants/pitanga-01.md
+  - "Equipamentos":
+      - "Visão geral": equipamentos/README.md
+      - "ESP32 DevKit V1 (ponte BLE→WiFi) — esp32-01": equipamentos/esp32-01.md
+      - "HHCC Flower Care — hhcc-01": equipamentos/hhcc-01.md
+      - "Inventário de equipamentos": equipamentos/inventario.md
+  - "Documentação":
+      - "Arquitetura de software": docs/arquitetura.md
+      - "Captura de dados — caminhos, transportes e infraestrutura": docs/captura-dados.md
+      - "Checklist de avaliação de produto": docs/checklist-avaliacao.md
+      - "Log de decisões e perguntas respondidas": docs/decisoes.md
+      - "Entrada oficial de atualizações de planta (foto pelo celular)": docs/entrada-atualizacoes-planta.md
+      - "Medições — o que medir e por quê": docs/medicoes.md
+      - "🎯 Objetivo 1 — as 4 medidas cruas pelo celular": docs/objetivo-1-captura-celular.md
+      - "Avaliação de produtos — catálogo de compras candidatas": docs/produtos-avaliados.md
+      - "Prompt para abrir em nova conversa — P29 (harness Claude × Gemini)": docs/prompt-p29-harness-gemini.md
+      - "Regimes — como o projeto agrupa plantas": docs/regimes.md
+      - "Relatório de IA por e-mail": docs/relatorio-ia.md
