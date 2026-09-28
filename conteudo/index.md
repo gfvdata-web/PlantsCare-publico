@@ -15,6 +15,7 @@ histórico datado de cada planta que vira diagnóstico e recomendação.
 
 | Quero ver… | Página |
 |---|---|
+| **Painel visual** — KPIs e sensores hora a hora | [Abrir o painel](https://gfvdata-web.github.io/PlantsCare-publico/) |
 | As plantas e o estado de cada uma | [Plantas](plants/README.md) |
 | O rumo do projeto, fases e perguntas em aberto | [Documento-mestre](PROJETO.md) |
 | Os sensores e equipamentos em uso | [Equipamentos](equipamentos/README.md) |

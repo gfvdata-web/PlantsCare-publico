@@ -1,6 +1,6 @@
 site_name: PlantsCare
 site_description: Cuidado de plantas orientado a dados — sensores, dado cru e histórico de cada planta.
-site_url: https://gfvdata-web.github.io/PlantsCare-publico/
+site_url: https://gfvdata-web.github.io/PlantsCare-publico/docs/
 docs_dir: conteudo
 use_directory_urls: true
 
@@ -56,6 +56,7 @@ markdown_extensions:
 
 
 nav:
+  - "← Painel": https://gfvdata-web.github.io/PlantsCare-publico/
   - "Início": index.md
   - "Documento-mestre": PROJETO.md
   - "Plantas":
@@ -75,6 +76,7 @@ nav:
       - "Checklist de avaliação de produto": docs/checklist-avaliacao.md
       - "Log de decisões e perguntas respondidas": docs/decisoes.md
       - "Entrada oficial de atualizações de planta (foto pelo celular)": docs/entrada-atualizacoes-planta.md
+      - "Histórico via prints do app do sensor (Flower Care)": docs/historico-sensor-app.md
       - "Medições — o que medir e por quê": docs/medicoes.md
       - "🎯 Objetivo 1 — as 4 medidas cruas pelo celular": docs/objetivo-1-captura-celular.md
       - "Avaliação de produtos — catálogo de compras candidatas": docs/produtos-avaliados.md

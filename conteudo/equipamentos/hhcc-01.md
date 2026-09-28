@@ -59,6 +59,12 @@ Protocolo, UUIDs, comandos e decodificação: ver
 [`docs/objetivo-1-captura-celular.md`](../docs/objetivo-1-captura-celular.md) — não duplicado
 aqui.
 
+**Histórico retroativo via app oficial:** além da captura crua (Objetivo 1, tempo real),
+o app "Flower Care" guarda log próprio desde a instalação. Método para extrair valores
+hora a hora de prints do gráfico (sem rótulo de eixo, 1 valor visível por toque):
+[`docs/historico-sensor-app.md`](../docs/historico-sensor-app.md). 🟡 **desde
+2026-09-28**, aguardando os primeiros prints.
+
 ## 5. Vínculo com plantas
 
 | Planta | De | Até | Observação |

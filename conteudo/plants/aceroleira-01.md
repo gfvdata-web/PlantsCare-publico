@@ -13,9 +13,10 @@
 > aplicado em 2026-09-18** (checagem de drenagem antes não confirmada)
 > **Próxima ação:** (1) **remover botão/flor observado em 20/09** (pinçar) → (2) **escolher e
 > amarrar o líder** ao tutor de bambu → (3) confirmar com o dono se a drenagem foi checada
-> antes do adubo de 18/09; registrar prints do app do sensor quando chegarem → (4) estilização
-> parada por pedido do dono
-> **Última atualização:** 2026-09-20
+> antes do adubo de 18/09 → (4) estilização parada por pedido do dono → (5) observar sinal de
+> estresse térmico na próxima foto (pico de 44,4°C no substrato em 21/09, ver histórico
+> 2026-09-28)
+> **Última atualização:** 2026-09-28
 
 ---
 
@@ -39,13 +40,18 @@
 
 | Parâmetro | Alvo | Observação |
 |---|---|---|
-| DLI | 25–40+ mol/m²/dia ⚠️ | **Sol pleno obrigatório.** Na sombra vegeta e não frutifica |
-| Água | Regular | **Tolera seca curta bem melhor que a jabuticaba.** Estresse hídrico leve seguido de chuva costuma **induzir floração** |
-| pH | 5,5–6,5 | Bem mais tolerante que a jabuticaba |
-| EC / nutrição | Exigente | Responde muito a adubação. Boro e cálcio importam para o fruto. **Adubo em casa: Forth Frutas 12-05-15 + micros** (rótulo lido em 2026-08-20) |
+| DLI | 25–40+ mol/m²/dia ⚠️ | **Sol pleno obrigatório.** Na sombra vegeta e não frutifica. Confirmado por
+UF/IFAS ([Growing Barbados Cherry in Florida](https://blogs.ifas.ufl.edu/stlucieco/2025/08/20/growing-barbados-cherry-in-florida/), 2026-09-28): "full sun for maximum flowering and fruit production" |
+| Água | Regular | **Tolera seca curta bem melhor que a jabuticaba.** Estresse hídrico leve seguido de chuva costuma **induzir floração**. UF/IFAS: rega 2–3×/semana na fase de estabelecimento; planta madura moderadamente tolerante à seca, mas floração/frutificação respondem à rega regular em período seco |
+| pH | 5,5–6,5 ⚠️ / 6,0–7,0 (UF/IFAS) | Bem mais tolerante que a jabuticaba. Duas fontes de literatura, faixas próximas — não verificado localmente (sem medição de pH no projeto, ver `docs/medicoes.md` §4) |
+| Substrato | Arenoso bem drenado + matéria orgânica | UF/IFAS: solo arenoso com composto/casca de pinus incorporado melhora estrutura e retenção — combina com a montagem já feita (argila expandida + manta + terra, ver histórico 2026-08-30) |
+| EC / nutrição | Exigente, mas **sem alvo numérico confiável em µS/cm crus** | Responde muito a adubação. Boro e cálcio importam para o fruto. **Adubo em casa: Forth Frutas 12-05-15 + micros** (rótulo lido em 2026-08-20). UF/IFAS (quantidade/frequência): planta jovem ¼ lb a cada 2 meses; planta madura 2–4 lb por aplicação, 3×/ano, até ~15 lb/ano — não convertido para este projeto (adubo diferente, medida em L de vaso, não lb). **Nutrientes lixiviam rápido em vaso** — ver §4 abaixo |
 | **Drenagem** | **Exige** | Encharcamento → problema radicular |
 | Vaso p/ frutificar | **30–50 L** ⚠️ | Atual: **~25–34 L** desde o transplante de 2026-08-30 — já dentro/na borda da faixa |
 | Horizonte de fruto | 1–2 anos (enxertada) ⚠️ | 3–5 safras/ano quando estabelecida |
+
+**Fontes consultadas em 2026-09-28** (pesquisa motivada por interpretar o histórico do
+`hhcc-01`, ver §4): [UF/IFAS — Growing Barbados Cherry in Florida](https://blogs.ifas.ufl.edu/stlucieco/2025/08/20/growing-barbados-cherry-in-florida/) · [UF/IFAS — CIR 1092/SS117, EC de substrato de vaso](https://ask.ifas.ufl.edu/publication/SS117) · [Nature Hills — Container Citrus Tree Fertilizer Guide](https://naturehills.com/blogs/garden-blog/understanding-container-citrus-tree-fertilization) (citros como proxy de manejo em vaso, não da espécie). ⚠️ Nenhuma fonte deu **alvo numérico de EC** específico para acerola — universidades usam método de laboratório (extrato de pasta saturada, dS/m), incompatível com a leitura crua de sensor barato (ver `docs/medicoes.md` §4).
 
 ⚠️ **Regime de rega oposto ao da jabuticabeira.** As duas estão na mesma varanda mas **não
 podem compartilhar calendário de rega**: uma não tolera secar, a outra se beneficia de seca
@@ -121,9 +127,12 @@ aplicam** a esta planta por enquanto. O que interessa medir é água e estresse.
       de que a checagem tenha sido feita antes. Perguntar ao dono; se não foi, checar agora mesmo
       assim — a chuva/frio já dura ~3 semanas segundo a nota de clima de 2026-09-20 (mais longa
       que as "2 semanas" registradas em 17/09).
-- [ ] **Prints do app do sensor pós-adubo** — dono avisou (2026-09-20) que vai mandar depois,
-      para cruzar stats/variação do `hhcc-01` com a aplicação de 18/09. Registrar como entrada
-      nova quando chegar.
+- [x] ~~**Prints do app do sensor pós-adubo**~~ → ✅ **fechado 2026-09-28**: 11 dias
+      processados (14–24/09), cobrindo antes e depois do adubo de 18/09. **EC salta de
+      ~263 µS/cm (véspera) para 725 µS/cm (dia da aplicação) e decai gradualmente nos dias
+      seguintes** — assinatura numérica clara do Forth Frutas agindo. Detalhe completo em
+      [`../docs/historico-sensor-app.md`](../docs/historico-sensor-app.md) (entrada
+      2026-09-28, "8 dias processados de uma vez").
 
 ---
 
@@ -895,3 +904,109 @@ pós-adubação). Manter o resto do plano já em curso (remover botão/flor, esc
 
 **Pendente:** ver §5 (atualizada) — confirmação da checagem de drenagem (novo, ligado ao adubo
 já aplicado); prints do app pós-adubo (novo); demais itens sem mudança.
+
+---
+
+### 2026-09-28 — Histórico numérico do `hhcc-01` reconstruído (14–24/09): EC confirma o adubo, 1 dia de calor extremo no substrato
+
+> Não é leitura por foto — é dado numérico do sensor, extraído de prints do app "Flower
+> Care" (método completo, tabelas hora a hora e demais dias em
+> [`../docs/historico-sensor-app.md`](../docs/historico-sensor-app.md)). Resumido aqui só o
+> que é acionável para o manejo desta planta.
+
+**Observado (11 dias de dados, 14 a 24/09):**
+
+- **EC (fertilidade) confirma numericamente o efeito do Forth Frutas aplicado em 18/09.**
+  Véspera (17/09): 263/222 µS/cm (Max/Min) — mesma faixa baixa dos dias 14–16/09. No dia da
+  aplicação (18/09): **Max salta para 725 µS/cm**, e só ali o valor passa a superar o piso
+  "apropriado" do app (350). Dias seguintes (19→24/09) mostram decaimento gradual: 531→322→
+  294→247→232→248 µS/cm — consistente com lixiviação, não com nova aplicação.
+- ⚠️ **21/09: temperatura do substrato bateu 44,4°C** (madrugada normal, 19,9°C) — o maior
+  valor de toda a série, acima da faixa "apropriada" do app (8–35°C). 🟡 **hipótese**: sensor
+  mede o substrato, não o ar — sol direto na ponta do sensor num dia de céu limpo pode
+  aquecer bem mais que a temperatura ambiente. Não é conclusão de estresse térmico; fica
+  registrado para cruzar com a próxima leitura de status por foto/comentário do dono
+  daquela semana, se houver sinal de folha queimada ou murcha.
+- Umidade acompanha o dia do adubo (Max 52% em 18/09, a maior da série) — bate com a prática
+  recomendada de substrato úmido antes de aplicar.
+
+**Concluído:** nenhuma mudança de manejo — o EC alto pós-adubo é o esperado e desejado (era
+justamente o alvo da aplicação), e o pico de 44,4°C é hipótese a observar, não uma ação
+imediata. Fecha a pendência "prints do app pós-adubo" registrada em 2026-09-20 — ver §5.
+
+**Ação:** nenhuma. Continuar recebendo prints do app (mais dias, e voltando no tempo até
+achar o limite de retenção) para estender a série — ver pendências em
+`docs/historico-sensor-app.md`.
+
+**Pendente:** ver §5 (sem mudança além do já fechado acima); observar sinal de estresse
+térmico na próxima foto/comentário, por causa do pico de 21/09.
+
+---
+
+### 2026-09-28 — Análise: por que a água "flutua pouco" e por que o adubo "sumiu rápido"
+
+> O dono perguntou como interpretar dois padrões dos 11 dias de dados: baixa flutuação da
+> umidade e fertilidade que subiu pouco e se dissipou rápido. **Detalhe importante que o dono
+> trouxe:** as faixas "apropriadas" mostradas pelo próprio app **não são de acerola** — são do
+> perfil **Citrus hystrix** (limão-kaffir), escolhido no app por ser a espécie mais parecida
+> disponível. Isso motivou ir atrás de literatura real de acerola (§2, fontes acima) em vez de
+> só usar o que o app sugere.
+
+**1) "Flutuação de água muito baixa" — é o comportamento esperado, não falha de sensor.**
+
+Água no substrato **não tem ciclo diário** como luz e temperatura (sol nasce e se põe todo
+dia; substrato não seca e umedece sozinho todo dia). O que existe é a **curva de secagem**
+entre uma rega/chuva e a próxima — mudança de **dias**, não de horas. Olhando os 11 dias:
+
+- Dentro de um único dia, a umidade é quase sempre uma linha reta (ex. 17/09: 22,9% em quase
+  todas as 24 horas). **Isso é o esperado** — já registrado como princípio do projeto em
+  `docs/medicoes.md` §2 ("medir o ciclo, não o ponto").
+- **O sinal real está na comparação entre dias**, e ele existe: 15/09 (15→41%, subiu — chuva
+  ou rega), indo a 33% em 16/09, caindo suave até 21% em 23/09 (seca gradual de ~8 dias), e
+  subindo de novo pra 40% em 18/09-24/09 batendo com o relato de chuva prolongada na ficha
+  (2026-09-17/20). **Isso É a curva de secagem que o projeto quer enxergar** — só não aparece
+  dentro de 1 dia, aparece **entre os dias**.
+- ⚠️ Não confundir "flutuação baixa" com "sonda não está pegando nada": os valores absolutos
+  batem com o padrão narrado (rega/chuva → sobe; dias secos → desce), então a sonda está
+  respondendo, só que na escala de tempo certa da própria água no solo, não na escala de horas.
+
+**2) "Fertilidade cresceu pouco e já foi embora tudo que coloquei" — bate com o que a
+literatura de citros em vaso prevê, e tem uma causa reforçante local (chuva).**
+
+- **"Cresceu pouco":** o salto de 263→725 µS/cm no dia do adubo (18/09) é, na verdade, um
+  aumento de quase **3×** — não é pouco em termos relativos. Pode ter *parecido* pouco porque
+  725 µS/cm ainda está abaixo da faixa "apropriada" do app (350–2000) — mas essa faixa é do
+  perfil Citrus hystrix, calibrada pra outra planta, então **não é o padrão certo pra julgar
+  "cresceu pouco ou não"** (ver §2, fontes). Sem alvo numérico confiável de EC pra acerola,
+  o que dá pra afirmar é só a **proporção**: quase triplicou.
+- **"Já foi tudo embora":** em ~4 dias (18→22/09) o EC caiu de 725 pra perto da faixa
+  pré-adubo (~226–248). A literatura de citros em vaso confirma que isso é **esperado, não
+  anômalo**: "potted citrus requires more frequent, lighter feeding because nutrients leach
+  out quickly" ([Nature Hills](https://naturehills.com/blogs/garden-blog/understanding-container-citrus-tree-fertilization)) — vaso pequeno tem pouco volume de substrato pra reter
+  sal, e rega/chuva lava rápido. **Fator agravante local:** a ficha já registra chuva
+  prolongada na mesma janela (2026-09-17 a 2026-09-20) — a "queda de nutriente" nesse caso é
+  **lixiviação por chuva**, não falta de absorção pela planta, seguindo a mesma lógica que
+  `docs/medicoes.md` §4 já previa pra regime "aberto à chuva" antes mesmo de ter dado real
+  pra testar.
+- ⚠️ **Ressalva metodológica:** EC crua de sensor barato sobe **também** com o aumento de
+  umidade em si (não só com sal dissolvido) — `docs/medicoes.md` §4 já registra isso. O dia
+  do adubo (18/09) é também o dia em que a umidade deu o maior salto da série (Max 52%). Parte
+  do pico de EC pode ser efeito cruzado de umidade, não só do adubo — os dois eventos
+  coincidiram no mesmo dia e não dá pra separar com um sensor só.
+
+**Concluído:** os dois padrões observados são **consistentes com o que se espera** de um vaso
+de ~25–34 L, substrato bem drenado, exposto à chuva direta — não indicam sensor com defeito
+nem indicam que o adubo "não fez efeito". O ritmo de decaimento do EC (poucos dias) é, se
+algo, um **argumento a favor de reaplicar em ciclos mais curtos e com doses menores** (padrão
+"frequent, lighter feeding" da literatura de citros em vaso), em vez das aplicações
+espaçadas atuais — mas isso é **inferência de literatura de citros, não de acerola
+comprovada**, então fica registrado como leitura, não como mudança de plano ainda.
+
+**Ação:** nenhuma mudança de manejo imediata. Considerar, na próxima decisão sobre adubação,
+avaliar um ciclo mais curto/dose menor em vez do padrão atual — discutir com o dono antes de
+aplicar (viola premissa 7 comprar produto novo, mas **não** viola mudar frequência do que já
+está em casa).
+
+**Pendente:** nenhuma fonte encontrada dá alvo numérico de EC específico pra acerola — se
+aparecer um artigo/extensão que meça isso diretamente (não via citros como proxy), atualizar
+§2. Seguir comparando o EC pós-próxima adubação com este baseline agora estabelecido.

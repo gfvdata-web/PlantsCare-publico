@@ -50,9 +50,11 @@ que isso não se repita.
 | 🛒 **Veredito de produtos já analisados** | [`docs/produtos-avaliados.md`](docs/produtos-avaliados.md) | Catálogo produto a produto, com links |
 | 🎯 **O objetivo ativo** — como capturar pelo celular | [`docs/objetivo-1-captura-celular.md`](docs/objetivo-1-captura-celular.md) | Procedimento passo a passo, UUIDs, decodificação |
 | 📡 **Como o dado sai do sensor** — BLE, WiFi, gateway, Raspberry | [`docs/captura-dados.md`](docs/captura-dados.md) | Caminhos de hardware, transportes, cérebro 24/7 |
+| 📊 **Prints do app do sensor (Flower Care)** — reconstruir histórico hora a hora por foto de gráfico sem rótulo | [`docs/historico-sensor-app.md`](docs/historico-sensor-app.md) | Método de captura (várias colunas tocadas por dia) e de leitura (calibração por proporção de barra) |
 | 📏 **O que medir e por quê** — DLI, VPD, EC, umidade, pH | [`docs/medicoes.md`](docs/medicoes.md) | Fundamentos de medição e armadilhas |
 | 🧩 **Como agrupamos as plantas** | [`docs/regimes.md`](docs/regimes.md) | O modelo de regimes e por que ele existe |
 | 💾 **Código, banco, schema, pipeline** | [`docs/arquitetura.md`](docs/arquitetura.md) | Camadas, formato canônico, módulos |
+| 🌐 **Página pública do projeto** — o que sai, o que é escondido, como publicar | `publico/publicar.py` | Site https://gfvdata-web.github.io/PlantsCare-publico/ — **painel** (KPIs e gráficos hora a hora por planta, lê `data/sensor-app/*.csv`, `data/eventos.csv` e `alvos` do `plants.yaml`) + documentação em `/docs/`. Sem localização das varandas e sem fotos. Publicar: `python publico/publicar.py` (só o que está commitado). Decisão em `docs/decisoes.md` (2026-09-28) |
 | 📜 **"Por que decidimos assim?"** | [`docs/decisoes.md`](docs/decisoes.md) | Log cronológico completo + perguntas respondidas |
 | 🧭 **Rumo do projeto** — escopo, fase, prioridade | **este arquivo** | §3 a §6 |
 

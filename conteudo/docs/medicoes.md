@@ -139,6 +139,16 @@ sobre água, luz, temperatura e EC **como tendência**.
 Sem cruzar com `precipitation` do Open-Meteo, o sistema reportaria "queda de nutriente" falsa
 a cada temporal.
 
+⚠️ **Tabela de referência acadêmica de EC (ex.: UF/IFAS [CIR 1092/SS117]
+(https://ask.ifas.ufl.edu/publication/SS117)) usa extrato de pasta saturada em laboratório**,
+não a sonda crua inserida direto no substrato. Optimum para ornamentais lenhosas na tabela:
+1,0–1,5 dS/m (=1000–1500 µS/cm); para plantas de vaso em geral, 2,0–3,5 dS/m. **Não dá pra
+comparar esse número direto com a leitura de um sensor barato tipo HHCC/Mi Flora** — métodos
+de extração diferentes leem escalas diferentes para o mesmo substrato real. Serve como
+referência de **ordem de grandeza** e de **direção** (baixo/ótimo/alto), não como alvo
+numérico a bater. Ver aplicação a uma planta específica em `plants/aceroleira-01.md`
+(2026-09-28).
+
 ---
 
 ## 5. VPD — derivado grátis
