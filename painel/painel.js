@@ -371,6 +371,9 @@ function miniKpis(p) {
     <div class="muted pequeno">Último dia com dado: ${dm(dias.at(-1).data)}</div>`;
 }
 
+// "2026-10-01 17:45" → "01/10 17:45" (hora local, já convertida em publicar.py)
+const quando = (ts) => `${ts.slice(8, 10)}/${ts.slice(5, 7)} ${ts.slice(11)}`;
+
 function paginaInicio(dados) {
   const ps = dados.plantas;
   const sensores = new Set(ps.flatMap((p) => p.sensores));
@@ -380,6 +383,7 @@ function paginaInicio(dados) {
   $("#app").innerHTML = `
     <h1>Painel das plantas</h1>
     <p class="sub">Cuidado de plantas orientado a dados: sensor no vaso, dado cru, e cada decisão registrada.</p>
+    ${dados.sensor_ate ? `<p class="muted pequeno">Última leitura do sensor: ${esc(quando(dados.sensor_ate))} · site atualiza de hora em hora, 7h–0h</p>` : ""}
     <div class="resumo">
       <div class="cartao"><div class="valor">${ps.length}</div><div class="rotulo">plantas acompanhadas</div></div>
       <div class="cartao"><div class="valor">${sensores.size}</div><div class="rotulo">sensor em uso</div></div>
@@ -413,7 +417,7 @@ function paginaPlanta(dados) {
     <div class="cabeca"><div>
       <h1>${esc(p.nome)}</h1>
       <p class="sub"><em>${esc(p.cientifico)}</em> · regime <code>${esc(p.regime)}</code></p>
-      <div class="chips"><span class="chip marca-verde">${esc(p.fase)}</span><span class="chip">Meta: ${esc(p.meta)}</span><span class="chip">${esc(p.local)}</span>${p.sensores.map((s) => `<span class="chip">sensor ${esc(s)}</span>`).join("")}<span class="chip">atualizado ${esc(p.atualizado)}</span></div>
+      <div class="chips"><span class="chip marca-verde">${esc(p.fase)}</span><span class="chip">Meta: ${esc(p.meta)}</span><span class="chip">${esc(p.local)}</span>${p.sensores.map((s) => `<span class="chip">sensor ${esc(s)}</span>`).join("")}<span class="chip">atualizado ${esc(p.atualizado)}</span>${p.sensores.length && dados.sensor_ate ? `<span class="chip">última leitura ${esc(quando(dados.sensor_ate))}</span>` : ""}</div>
     </div></div>
     <p class="estado-texto">${p.estado_html}</p>
     ${temDado ? `
@@ -501,7 +505,7 @@ function paginaPlanta(dados) {
   render();
 }
 
-fetch("dados.json")
+fetch("dados.json", { cache: "no-cache" })
   .then((r) => r.json())
   .then((dados) => (document.body.dataset.pagina === "planta" ? paginaPlanta : paginaInicio)(dados))
   .catch((e) => { $("#app").innerHTML = `<p>Não foi possível carregar os dados (${esc(e.message)}).</p>`; });

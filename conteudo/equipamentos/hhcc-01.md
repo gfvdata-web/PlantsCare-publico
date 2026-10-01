@@ -6,9 +6,9 @@
 > Objetivo 1 **ainda não fechado**: faltam as demais leituras do critério de conclusão (§7 de
 > [`docs/objetivo-1-captura-celular.md`](../docs/objetivo-1-captura-celular.md)) — só 1 de 5
 > feita.
-> **Instalado em:** [`aceroleira-01`](../plants/aceroleira-01.md), desde 2026-09-17 ⚠️ (data
-> exata da troca não confirmada, só informada nesta data). Antes, em
-> [`jabuticabeira-hibrida-01`](../plants/jabuticabeira-hibrida-01.md), 2026-08-23 → 2026-09-17.
+> **Instalado em:** [`pitanga-01`](../plants/pitanga-01.md), desde 2026-10-01 às 15:00. Antes: [`aceroleira-01`](../plants/aceroleira-01.md) 2026-09-17 → 2026-10-01;
+> [`jabuticabeira-hibrida-01`](../plants/jabuticabeira-hibrida-01.md) 2026-08-23 → 2026-09-17.
+> Intervalos: `data/sensor-vinculos.csv`.
 > **Última atualização:** 2026-10-01 — passa a ser ouvido 24/7 pelo [`esp32-01`](esp32-01.md)
 
 ---
@@ -70,7 +70,8 @@ hora a hora de prints do gráfico (sem rótulo de eixo, 1 valor visível por toq
 | Planta | De | Até | Observação |
 |---|---|---|---|
 | [`jabuticabeira-hibrida-01`](../plants/jabuticabeira-hibrida-01.md) | 2026-08-23 ⚠️ | 2026-09-17 ⚠️ | Só leitura pelo app "Flower Care"; nRF Connect nunca chegou a ser feito lá (dono fora do local B) |
-| [`aceroleira-01`](../plants/aceroleira-01.md) | 2026-09-17 ⚠️ | — (em uso) | Reinstalado — dono relatou a troca sem detalhar data exata nem motivo |
+| [`aceroleira-01`](../plants/aceroleira-01.md) | 2026-09-17 ⚠️ | 2026-10-01 15:00 | Reinstalado — dono relatou a troca sem detalhar data exata nem motivo. Histórico: prints do Flower Care (14/09→) + planilha `InfoSensorESP32` (01/10) |
+| [`pitanga-01`](../plants/pitanga-01.md) | 2026-10-01 15:00 | — (em uso) | 1ª medição da pitanga. Mesma varanda → mesma ponte `esp32-01`. Fonte de verdade dos intervalos: `data/sensor-vinculos.csv` |
 
 ### 5.1 Em qual planta instalar → ✅ resolvido 2026-08-23: `jabuticabeira-hibrida-01`
 
@@ -241,3 +242,27 @@ Primeira escuta remota: 28,2–29,0 °C, umidade 22 %, condutividade 189–191 �
 ⚠️ **Bateria não vem na escuta passiva** — continuar lendo em `0x1A02` pelo nRF Connect.
 A escuta da ponte também **não substitui** as 4 leituras manuais que faltam no Objetivo 1
 (critério é captura pelo celular).
+
+---
+
+### 2026-10-01 — Movido da `aceroleira-01` para a `pitanga-01`
+
+**Decisão do dono:** a acerola já tem histórico (prints do Flower Care desde 14/09, a
+completar até hoje); a pitanga nunca foi medida. Mesma varanda, então a ponte `esp32-01`
+continua ouvindo sem mudar nada no firmware nem na planilha.
+
+**Como a planta é resolvida:** a planilha grava só `sensor = hhcc-01`, sem planta. Qual planta
+cada linha representa sai de `data/sensor-vinculos.csv`
+(intervalos `inicio`/`fim` por sensor), cruzado pelo horário `recebido_em`. Troca de sensor =
+uma linha nova nesse CSV, sem regravar a placa.
+
+**Pendente:** hora exata da troca (fecha o intervalo da acerola e abre o da pitanga);
+confirmar que o `idade_leitura_s` da planilha segue baixo depois da troca (sensor no alcance
+da ponte na nova posição).
+
+**Confirmação (mesmo dia):** troca às 15:00. Intervalo fechado em `data/sensor-vinculos.csv`;
+`core/vinculos.py` (`planta_em`) resolve a planta de cada leitura pelo horário.
+
+**Correção (15:24):** nova coluna `descartar_ate` em `data/sensor-vinculos.csv`. Pitanga vale
+a partir de 16:30; leituras da planilha anteriores à troca (acerola) descartadas — eram testes
+da ponte instalada no mesmo dia.

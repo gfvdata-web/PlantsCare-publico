@@ -9,11 +9,11 @@
 > **Canal de envio:** chat, com **Remote Control ativado no celular** (foto direta
 > também funciona) — ver [`entrada-atualizacoes-planta.md`](entrada-atualizacoes-planta.md).
 > Não precisa de Forms separado.
-> **Estado:** 🟢 método corrigido e validado com dados reais — **11 dias processados**
-> (14–24/09/2026), com **estimativa hora a hora automatizada** (§5) além do
-> Max/Min/acumulado diário (§2), sem exigir toque extra do dono. Cobre agora a
-> janela **antes e depois do adubo de 18/09**.
-> **Última atualização:** 2026-09-28
+> **Estado:** 🟢 método validado — **17 dias processados** (14–30/09/2026) para a
+> `aceroleira-01`. Falta só a manhã de 01/10 (até a troca de sensor às 15h) para
+> fechar o canal nesta planta; o `hhcc-01` passou para a `pitanga-01` em
+> 2026-10-01. Dados estruturados em `data/sensor-app/aceroleira-01-{diario,horario}.csv`.
+> **Última atualização:** 2026-10-01
 
 ---
 
@@ -432,3 +432,77 @@ daquele dia não foi capturado, ver gap já registrado acima).
 
 **Pendente:** continuar indo para trás (`<Previous day` a partir de 14/09, pra
 achar o limite de retenção do app) e para frente a partir de 25/09.
+
+### 2026-10-01 — Lote 25–30/09: calor do substrato vira padrão, não mais pico isolado
+
+> 6 dias processados (25 a 30/09), mesmo método (§3–§5). Fotos em
+> `plants/fotos/aceroleira-01/sensor-app/2026-09-2[5-9]-*.jpg` e `2026-09-30-*.jpg`.
+> Linhas gravadas em `data/sensor-app/aceroleira-01-diario.csv` e `-horario.csv`
+> (qualidade `direto`/`est`/`teto` por hora, mesma convenção do lote anterior).
+
+**Resumo diário (página 2 do app):**
+
+| Data | Sunlight (acumulado) | Moisture Max/Min | Fertility Max/Min (µS/cm) | Temp Max/Min (°C) |
+|---|---|---|---|---|
+| 2026-09-25 | **24183 mmol** | 45/26% | 665/228 | 42,2/18,9 |
+| 2026-09-26 | **30866 mmol** | 38/25% | 476/226 | 47,0/19,8 |
+| 2026-09-27 | **28156 mmol** | 25/21% | 291/194 | 39,9/21,3 |
+| 2026-09-28 | **27723 mmol** | 25/20% | 261/152 | 47,7/21,6 |
+| 2026-09-29 | **24158 mmol** | 43/21% | 461/173 | 40,7/22,1 |
+| 2026-09-30 | **25074 mmol** | 25/21% | 214/167 | 40,5/22,3 |
+
+**Leitura — o que muda com este lote:**
+
+- 🔴 **Temperatura de substrato acima de 40°C em 5 dos 6 dias, duas vezes perto de
+  48°C** (26/09: 47,0°C; 28/09: 47,7°C) — o pico de 44,4°C em 21/09 (já registrado
+  como "hipótese a observar") **deixa de ser isolado e vira padrão repetido**. Ver
+  entrada na ficha da planta (2026-10-01) — isto sobe de prioridade.
+- **Luz consistentemente acima da "faixa apropriada" do app** nos 6 dias (24–31 mil
+  mmol contra alvo 3300–7400) e **saturando o teto do gráfico quase todo dia**
+  (3 a 5 horas/dia com `⚠️teto`, só 14/09 e os dias de pouco sol — 22,23/09 — não
+  saturam). Os dias de calor extremo (26 e 28/09) são também os de maior luz —
+  consistente com sol direto forte, não com falha de sensor.
+- **EC com picos altos de novo** (665 em 25/09, 476 em 26/09, 461 em 29/09) **sem
+  nova adubação** (a próxima está marcada para ~18/10, ver ficha) — reforça a
+  ressalva já registrada em `docs/medicoes.md` §4: EC crua sobe com temperatura e
+  umidade do substrato, não só com sal. Os dias de EC alta aqui coincidem com dias
+  de calor alto — **mais evidência de que parte do sinal de EC é artefato térmico**,
+  não variação real de nutriente. Não compara 1:1 com o pico de 725 µS/cm do dia
+  do adubo (18/09), que teve causa conhecida.
+- **Umidade segue com queda suave entre regas/chuva**, sem padrão novo — 38–45%
+  em 25–26/09 (ainda descendo da chuva anterior), caindo para 20–25% nos dias
+  seguintes, mais seco e quente.
+
+**Tabelas hora a hora:** mesma convenção das entradas anteriores — ver os CSVs
+estruturados (`data/sensor-app/aceroleira-01-horario.csv`) para o detalhe completo;
+resumo dos picos de Temp por dia:
+
+| Data | Temp mín (madrugada) | Temp máx | Horário aprox. do pico |
+|---|---|---|---|
+| 25/09 | 18,9°C | **42,2°C** | ~16h |
+| 26/09 | 19,8°C | **47,0°C** | ~16–17h |
+| 27/09 | 21,3°C | **39,9°C** | ~15–16h |
+| 28/09 | 21,6°C | **47,7°C** | ~15–16h |
+| 29/09 | 22,1°C | **40,7°C** | ~16–17h |
+| 30/09 | 22,3°C | **40,5°C** | ~16h |
+
+**Concluído:** o padrão de calor extremo no substrato (madrugada normal, tarde
+disparando 20–25°C acima) está consistente dia após dia — não é mais um outlier
+de 21/09. Ação registrada na ficha da `aceroleira-01` (2026-10-01).
+
+**Pendente:** falta só a manhã de 01/10 (até 15h, hora da troca pra pitanga — ver
+entrada seguinte) para fechar o histórico da acerola por este canal.
+
+---
+
+### 2026-10-01 — Próximo lote: acerola 25/09 → 01/10; depois disso, o app vira histórico da pitanga
+
+O `hhcc-01` foi para a `pitanga-01` hoje. Lote combinado com o dono: prints da acerola de
+**25/09 até o dia da troca**, mesmo método (§3–§5), mesma pasta
+(`plants/fotos/aceroleira-01/sensor-app/`), mesmos CSVs.
+
+⚠️ **Cuidado com o app:** o histórico do Flower Care é do *sensor*, não do vaso. Os dias a
+partir da troca que aparecerem no app (ainda com o nome/perfil da acerola) **são da pitanga** —
+o corte é pela hora da troca em `data/sensor-vinculos.csv`. O
+dia 01/10 fica misto: antes da hora da troca = acerola, depois = pitanga. Para a pitanga, a
+fonte principal agora é a planilha `InfoSensorESP32`; prints só se a ponte falhar.

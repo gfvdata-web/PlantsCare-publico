@@ -19,8 +19,8 @@ Objetivo 1 (captura manual pelo celular) segue com 1/5 leituras.
 
 | `equip_id` | Equipamento | Instalado em | Desde | Ficha |
 |---|---|---|---|---|
-| `hhcc-01` | HHCC Flower Care | [`aceroleira-01`](../plants/aceroleira-01.md) | 2026-09-17 ⚠️ | [ficha](hhcc-01.md) — 🟢 dado cru confirmado (nRF Connect, 2026-09-20); Objetivo 1 parcial (1/5 leituras). Antes na `jabuticabeira-hibrida-01` (23/08→17/09) |
-| `esp32-01` | ESP32 DevKit V1 (ponte BLE→WiFi) + cabo + carregador | tomada perto da [`aceroleira-01`](../plants/aceroleira-01.md) — infraestrutura, serve o `hhcc-01` | 2026-10-01 | [ficha](esp32-01.md) — 🟢 ouvindo o `hhcc-01`, envio para planilha a cada 15 min. Cabo do kit só carrega |
+| `hhcc-01` | HHCC Flower Care | [`pitanga-01`](../plants/pitanga-01.md) | 2026-10-01 15:00 | [ficha](hhcc-01.md) — 🟢 dado cru confirmado (nRF Connect, 2026-09-20); Objetivo 1 parcial (1/5 leituras). Antes na `aceroleira-01` (17/09→01/10) e na `jabuticabeira-hibrida-01` (23/08→17/09). Intervalos: `data/sensor-vinculos.csv` |
+| `esp32-01` | ESP32 DevKit V1 (ponte BLE→WiFi) + cabo + carregador | tomada na varanda do local A (acerola + pitanga) — infraestrutura, serve o `hhcc-01` onde ele estiver | 2026-10-01 | [ficha](esp32-01.md) — 🟢 ouvindo o `hhcc-01`, envio para planilha a cada 15 min. Cabo do kit só carrega |
 
 ## Guardado / reserva
 

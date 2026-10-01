@@ -5,14 +5,13 @@
 > **Local:** varanda — **local A** (_coordenadas omitidas_), 6h+ de
 > sol direto, aberta à chuva. **Mesma varanda da [`aceroleira-01`](aceroleira-01.md)** —
 > gerenciamento **separado** da varanda da `jabuticabeira-hibrida-01` (local B).
-> **Estado:** 🟡 estabelecimento **incerto outra vez** — ⚠️ **2ª correção no mesmo dia**: o
-> dono notou que o tom avermelhado **já aparecia na foto de 2026-08-30** (dia da compra) — e
-> checando, há mesmo um broto de tom parecido naquela foto. Cor isolada, de foto única, **não
-> prova idade da folha**. Critério de saída volta a **não confirmado**
-> **Próxima ação:** **sem adubo ainda.** Método novo: contar os pares de folha na mesma ponta
-> hoje e comparar em ~10 dias — se a ponta **avançar** (novos pares além dos de hoje) ou essas
-> folhas **esverdearem**, é crescimento; se ficar idêntica, não é. Estilização em pausa
-> **Última atualização:** 2026-09-17
+> **Estado:** 🟡 estabelecimento — **crescimento provável**: o broto da base cresceu de ~1–2
+> folhas (17/09) para um tufo (01/10), e há gemas bronze abrindo nas pontas. Copa ainda não
+> confirmada pela mesma ponta em duas datas. Manchas amarelas 🟡 a observar
+> **Próxima ação:** **sem adubo, sem poda ainda.** ~08/10: foto de perto das mesmas pontas da
+> `2026-10-01-3.jpg` — abriram em folha → estabelecimento concluído, adubo meia dose liberado,
+> P28 volta. Também: face de baixo de 2–3 folhas manchadas. Sensor `hhcc-01` medindo desde 01/10 15:00
+> **Última atualização:** 2026-10-01 — fotos do Forms + sensor `hhcc-01` instalado
 
 ---
 
@@ -63,7 +62,7 @@ de saída continua sendo **brotação nova saudável**, não uma data.
 
 | Equipamento | Desde | O que mede | Ficha |
 |---|---|---|---|
-| — nenhum ainda — | | | |
+| `hhcc-01` | 2026-10-01 15:00 | Umidade, EC, luz, temp. a cada 15 min, via ponte `esp32-01` → planilha `InfoSensorESP32`. Perfil do app: *Eugenia uniflora* | [`equipamentos/hhcc-01.md`](../equipamentos/hhcc-01.md) |
 
 ## 5. Pendências
 
@@ -582,3 +581,90 @@ no tempo, não mais foto única.
 
 **Pendente:** ver §5 — brotação nova reaberta outra vez, agora com método de verificação
 definido (contagem de pares de folha na mesma ponta, revisitar em ~10 dias).
+
+---
+
+### 2026-10-01 — Sensor `hhcc-01` instalado: 1ª medição desta planta
+
+**Observado:** o dono moveu o `hhcc-01` da `aceroleira-01` para este vaso (⚠️ hora exata a
+confirmar). Mesma varanda, então a ponte `esp32-01` segue ouvindo e gravando a cada 15 min na
+planilha `InfoSensorESP32`. Leituras de antes da troca na planilha são da acerola — a divisão
+está em `../data/sensor-vinculos.csv`.
+
+**O que o sensor pode responder aqui:**
+
+- **Rega:** a superfície coberta de pedras brancas (2026-09-03) escondia a secagem — a curva
+  de umidade passa a mostrar isso diretamente.
+- **Estabelecimento da raiz** (critério de saída em aberto desde 17/09): ciclos de secagem
+  ficando mais rápidos ao longo das semanas sugerem raiz ativa consumindo água. 🟡 Sinal
+  indireto: vale cruzado com a contagem de pares de folha, não sozinho.
+- **EC de base sem adubo** (nunca adubada no projeto): referência para quando o adubo for
+  liberado.
+
+**Limites:** as manchas foliares e a hipótese de fungo **nenhum sensor do projeto detecta**.
+Sonda a ~5 cm: mede a camada de cima, não a zona radicular do torrão de viveiro.
+
+**Ação:** nenhuma no manejo. Desconsiderar a 1ª hora após a troca (sonda assentando no
+substrato). Primeira leitura de tendência após ~1 semana de dados.
+
+**Pendente:** hora exata da troca.
+
+**Confirmação (mesmo dia):** troca feita às **15:00** (horário de Brasília), informada pelo
+dono. Leituras da planilha a partir das 15:00 são desta planta; 15:00–16:00 descartadas (sonda
+assentando). Regra aplicada por `core/vinculos.py`. O app Flower Care foi resetado para esta
+planta pelo dono.
+
+---
+
+### 2026-10-01 — Dia 32: comparação no tempo (método de 17/09) — crescimento provável, não fechado
+
+> Update enviado pelo Forms às ~15:28. ⚠️ **O Apps Script não arquivou o envio** (fotos
+> ficaram em `Plantas Update (File responses)/Fotos`, nada em `PlantsCare Inbox` nem no
+> GitHub) — fotos copiadas à mão. **O texto do campo `Comentários` não chegou ao repo**
+> (fica só na resposta do Forms); registrar em entrada complementar quando o dono repassar.
+
+**Observado (4 fotos, ~30 min depois de instalar o `hhcc-01`):**
+
+- **Vista geral** (`-1`), enquadramento parecido com `2026-09-17-1.jpg`: copa cheia, verde
+  escura, sem murcha nem queda visível. Ramo líder da direita, junto à grade, parece mais
+  alto — ⚠️ ângulo diferente, **não conta** como medida.
+- **Broto da base, entre as pedras:** em 17/09 era **um broto pequeno com ~1–2 folhas**; hoje
+  é **um tufo com vários pares de folha verde-clara**, bem maior. É a **mesma posição em dois
+  momentos** — o tipo de comparação que o método de 17/09 pede. ⚠️ Confirmar de perto que é
+  rebrota da pitanga (folha igual, saindo do colo/raiz) e não uma erva.
+- **Pontas da copa** (`-3`): várias pontas com **pares minúsculos, ainda fechados,
+  bronze/vinho** — gema rompendo, não folha do tamanho normal avermelhada. Foto única → **apoio,
+  não prova** (lição de 17/09).
+- **Manchas foliares** (`-4`, de cima): várias folhas com **mancha amarela difusa**, algumas
+  com ponto escuro no centro; alguns furos de mastigador. Em 17/09 estavam "estáveis"; daqui
+  de cima parecem **em mais folhas**, mas ângulo e luz diferem — 🟡 a observar, não
+  conclusão.
+
+**Concluído:**
+
+- 🟡 **Crescimento provável.** A única evidência com eixo do tempo (broto da base) mostra
+  crescimento real em 14 dias; as gemas nas pontas são coerentes com isso. Ainda **não fecha**
+  o critério da copa: falta a **mesma ponta** em duas datas.
+- **Fechar em ~7 dias (~08/10):** fotografar de perto **as mesmas pontas da foto `-3`** (ramo
+  alto encostado na parede). Se os pares bronze **abriram em folha**, o estabelecimento está
+  concluído → adubo meia dose liberado e a poda de formação (P28) volta à mesa com a
+  forma-alvo. Se estiverem idênticos, segue em espera.
+- **Sensor ajuda no mesmo ponto:** se a umidade da sonda cair mais rápido a cada ciclo de
+  secagem nas próximas semanas, é raiz consumindo água — sinal indireto, cruzar com as fotos.
+- **Manchas: nenhum sensor do projeto detecta fungo.** Precisa de foto da **face de baixo**
+  de 2–3 folhas manchadas, de perto. Manter: rega só no substrato, de manhã, sem pulverizar.
+
+**Ação:** nada no manejo hoje. Sem adubo, sem poda. Foto de perto das pontas e da face
+inferior das manchas em ~7 dias.
+
+**Estado:** 🟡 estabelecimento — crescimento provável (broto da base cresceu em 14 dias),
+confirmação da copa em ~08/10.
+
+**Pendente:** comentário do Forms deste envio; confirmar o broto da base; face inferior das
+manchas; ver §5.
+
+**Fotos:** _não publicadas._
+
+**Correção (mesmo dia, 15:24):** o dono pediu para ignorar ~1 h após a troca. Leituras desta
+planta **valem a partir de 16:30** de 2026-10-01 (coluna `descartar_ate` em
+`data/sensor-vinculos.csv`). Substitui o "15:00–16:00" da confirmação acima.

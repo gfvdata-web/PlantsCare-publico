@@ -13,7 +13,7 @@
 > direto ([`decisoes.md`](docs/decisoes.md) 2026-10-01). Config em
 > `esphome/`, receptor em
 > `google-apps-script/sensor-esp32/`. O coletor
-> `bleak` + SQLite em `collectors/`/`core/` fica parado (não alcança o sensor). Falta **P32**.
+> `bleak` + SQLite em `collectors/`/`core/` fica parado (não alcança o sensor). **P32** (planilha → repo → site de hora em hora, 07h–00h) implementada; liga quando os segredos do GitHub estiverem configurados.
 > **Última atualização:** 2026-10-01 · **Dono:** Guilherme
 
 ---
@@ -159,7 +159,7 @@ pipeline — se divergirem, o markdown vence.
 |---|---|---|
 | **Fase 0** | Cadastro documental — estrutura, fichas, avaliação de produtos | ✅ concluída |
 | **🎯 Fase 1** | **Objetivo 1**: 4 medidas cruas pelo celular, manual | 🟡 sensor e dado cru confirmados; faltam 4 de 5 leituras manuais (P26) |
-| **Fase 2** | Coleta automática a cada 15 min, Open-Meteo. Destrava **DLI** e curva de secagem. Previsto no PC (`bleak` + SQLite); **feito via `esp32-01` → planilha** porque o PC não alcança o sensor e não fica ligado | 🟢 coleta rodando desde 2026-10-01; falta trazer a planilha para o pipeline (P32) |
+| **Fase 2** | Coleta automática a cada 15 min, Open-Meteo. Destrava **DLI** e curva de secagem. Previsto no PC (`bleak` + SQLite); **feito via `esp32-01` → planilha** porque o PC não alcança o sensor e não fica ligado | 🟢 coleta rodando desde 2026-10-01; planilha → site de hora em hora (P32) |
 | **Fase 3** | Escala: máquina 24/7, ESP32 ponte, DIY com sonda longa, dashboard, interpretação automática | ⚪ só com dor medida |
 
 **Critério de avanço:** cada fase só começa quando a anterior gerou uma **dor real e
@@ -224,7 +224,7 @@ Respondidas: [`docs/decisoes.md`](docs/decisoes.md).
 | ~~**P29**~~ | ~~Harness comparando `gerar_relatorio_manual.py` (Claude Code) × API do Gemini para o relatório de IA~~ → ✅ **aprovada 2026-09-21**: `relatorios/ia_gemini.py` + `relatorios/harness_comparacao.py`, testado em 3 plantas, prompt ajustado em 5 rodadas até aprovação. Modelo `gemini-3.1-flash-lite` (só tier gratuito, decisão deliberada do dono). Ver `docs/decisoes.md` (2026-09-21) e `relatorios/saida/p29-resultado-2026-09-21.md` | — |
 | ~~**P30**~~ | ~~`gerar_relatorio.py` salvava o estado antes de confirmar o e-mail~~ → ✅ **corrigida 2026-09-20**: ordem alinhada com `gerar_relatorio_manual.py` — estado só é salvo depois de PDF + e-mail confirmarem | — |
 | **P31** | Automação ponta a ponta: Forms → ficha → síntese (Gemini) → PDF → e-mail, sem sessão interativa. **Implementado 2026-09-21** — ver `docs/decisoes.md`: repo `gfvdata-web/PlantsCare` (privado) no GitHub, `relatorios/gerar_relatorio_gemini.py` (3º caminho oficial), `relatorios/atualiza_automatico.py` + `relatorios/ia_gemini_diagnostico.py` (estágio 1 — só chama IA de foto se o comentário tiver a palavra-chave, ver `PALAVRAS_CHAVE_ANALISE`), `.github/workflows/pipeline.yml`. 🟡 **Aberto: workflow ainda é `workflow_dispatch` (manual) de propósito** — falta o dono rodar 1x, revisar o e-mail/commit, e decidir se troca para gatilho automático (`push` em `inbox/**`). Também falta configurar `GITHUB_TOKEN` no Apps Script (`google-apps-script/SETUP.md` §8) pra o Forms começar a commitar no repo | Decide se o pipeline final vira 100% automático (Forms dispara tudo sozinho) ou fica com esse "botão manual" de propósito |
-| **P32** | Trazer as leituras da planilha `InfoSensorESP32` para o repositório (`data/`) e para o painel público — ex.: GitHub Actions lendo a planilha periodicamente. Hoje o histórico automático só existe na planilha | Painel e relatório de IA seguem alimentados pelos prints do Flower Care até isso existir |
+| **P32** | Planilha `InfoSensorESP32` → `data/esp32/` → painel público, sem PC. **Implementada 2026-10-01**: `.github/workflows/sensor-sync.yml` (de hora em hora, 07h–00h de Brasília; a madrugada entra na execução das 07h) + `collectors/planilha_esp32.py` + painel mesclando as fontes. 🟡 **Aberto:** dono configurar 3 segredos no GitHub (`SHEET_URL`, `SHEET_TOKEN`, `PUBLICO_TOKEN`) e reimplantar o Apps Script com o `doGet` novo — ver `google-apps-script/sensor-esp32/SETUP.md`. Depois: comparar o mmol de luz da ponte com o do app num mesmo dia | Sem isso o site não atualiza sozinho |
 
 **Mais adiante:** Home Assistant ou stack própria? · tolerância a manutenção recorrente ·
 formato de saída preferido (CLI, dashboard, notificação) · vale análise laboratorial de solo?

@@ -7,17 +7,19 @@
 > `jabuticabeira-hibrida-01` (local B) — confirmado 2026-08-02, ver P23 em
 > [`docs/decisoes.md`](../docs/decisoes.md).
 > **Estado:** 🟢 **recuperação avançada, copa seguindo cheia** (checagem 2026-09-20) · vaso
-> ~25–34 L · sensor `hhcc-01` instalado e confirmado por foto · **novo(s) botão(ões)/flor
+> ~25–34 L · **sem sensor desde 2026-10-01** (`hhcc-01` foi para a pitanga) · **novo(s) botão(ões)/flor
 > pequena observado(s)** perto do centro do vaso (🟡 hipótese) · líder **ainda não** escolhido
 > nem amarrado ao tutor · estilização em pausa (dono pediu) · **Forth Frutas meia dose
 > aplicado em 2026-09-18** (checagem de drenagem antes não confirmada)
 > **Próxima ação:** (1) **remover botão/flor observado em 20/09** (pinçar) → (2) **escolher e
 > amarrar o líder** ao tutor de bambu → (3) confirmar com o dono se a drenagem foi checada
-> antes do adubo de 18/09 → (4) estilização parada por pedido do dono → (5) observar sinal de
-> estresse térmico na próxima foto (pico de 44,4°C no substrato em 21/09) → (6) **próxima
-> adubação ~2026-10-18** (30 dias, frequência do rótulo Forth Frutas), 1 colher de **sopa**
-> (25g), não de sobremesa
-> **Última atualização:** 2026-09-28
+> antes do adubo de 18/09 → (4) estilização parada por pedido do dono → (5) 🔴 **pedir foto
+> específica de folha/ponta de ramo na próxima janela de sol forte** — calor do substrato
+> passou de 40°C em 5 de 6 dias (25–30/09), 2x perto de 48°C, virou padrão repetido, não
+> mais pico isolado → (6) **próxima adubação ~2026-10-18** (30 dias, rótulo Forth Frutas),
+> 1 colher de **sopa** (25g) — ⚠️ sem sensor nesta planta desde 01/10 (foi pra pitanga),
+> decidir com o dono se volta antes da adubação pra medir o efeito
+> **Última atualização:** 2026-10-01
 
 ---
 
@@ -80,7 +82,7 @@ aplicam** a esta planta por enquanto. O que interessa medir é água e estresse.
 
 | Equipamento | Desde | O que mede | Ficha |
 |---|---|---|---|
-| `hhcc-01` | 2026-09-17 ⚠️ | Umidade, EC, luz, temp. — dado cru confirmado via nRF Connect em 2026-09-20 (1ª leitura); mais leituras pendentes (Objetivo 1) | [`equipamentos/hhcc-01.md`](../equipamentos/hhcc-01.md) |
+| ~~`hhcc-01`~~ | 2026-09-17 ⚠️ → **2026-10-01** | Removido: foi para a [`pitanga-01`](pitanga-01.md). Histórico desta planta: `data/sensor-app/aceroleira-01-*.csv` (prints do Flower Care) + planilha `InfoSensorESP32` até a hora da troca | [`equipamentos/hhcc-01.md`](../equipamentos/hhcc-01.md) |
 
 ## 5. Pendências
 
@@ -137,7 +139,13 @@ aplicam** a esta planta por enquanto. O que interessa medir é água e estresse.
 - [ ] **Próxima adubação: ~2026-10-18** (30 dias após 18/09, frequência oficial do rótulo Forth
       Frutas) — usar **1 colher de SOPA (25g)**, a medida certa do rótulo (a de 18/09 foi de
       sobremesa, menor). Aplicar a 20cm do tronco ao redor da copa, regar em seguida. Registrar
-      data exata e confirmar a medida usada, pra manter comparável com 18/09.
+      data exata e confirmar a medida usada, pra manter comparável com 18/09. ⚠️ **Sem sensor
+      nesta planta desde 2026-10-01** (foi para a pitanga) — decidir com o dono se volta antes
+      da adubação, senão essa aplicação fica sem curva de EC medida.
+- [ ] 🔴 **Pedir foto/comentário específico de folha e ponta de ramo na próxima janela de sol
+      forte** — substrato passou de 40°C em 5 de 6 dias (25–30/09), 2x perto de 48°C (ver
+      histórico 2026-10-01). Virou padrão repetido, não mais o pico isolado de 44,4°C de
+      21/09. Procurar sinal de queima ou murcha que não existia nos checkpoints anteriores.
 
 ---
 
@@ -1137,3 +1145,88 @@ planilha `InfoSensorESP32` (Google Drive). Primeira escuta (fim de tarde): subst
 **Consequência para esta ficha:** o histórico hora a hora deixa de depender de prints do
 Flower Care a partir de hoje — mas só entra no painel/pipeline quando a P32 (`PROJETO.md` §7)
 for feita. Até lá, os dados ficam na planilha.
+
+---
+
+### 2026-10-01 — `hhcc-01` sai desta planta e vai para a `pitanga-01`
+
+**Decisão do dono:** a pitanga nunca foi medida; a acerola já tem ~2 semanas de histórico.
+O sensor muda de vaso hoje (⚠️ hora exata a confirmar).
+
+**Histórico numérico que esta planta fica tendo:**
+
+| Período | Fonte | Situação |
+|---|---|---|
+| 14/09 → 30/09 | Prints do Flower Care, hora a hora (`data/sensor-app/aceroleira-01-*.csv`) | ✅ registrado (24/09 em 2026-09-28; 25–30/09 em 2026-10-01) |
+| 01/10, até 15h (até a troca) | Prints do Flower Care | ⏳ dono vai enviar — mesmo método de [`docs/historico-sensor-app.md`](../docs/historico-sensor-app.md) |
+| 01/10, fim de tarde → troca | Planilha `InfoSensorESP32` (a cada 15 min) | ✅ na planilha; serve para conferir os prints do mesmo dia |
+
+**Consequência:** a partir da troca, nenhum número novo de umidade/EC desta planta. A
+adubação de ~18/10 **não vai ter curva de EC medida** (a de 18/09 tem) — a comparação
+"colher de sopa × colher de sobremesa" fica sem dado, a menos que o sensor volte para cá
+nessa janela. Decidir perto da data.
+
+**Pendente:** prints 25/09→01/10; hora exata da troca; decidir se o sensor volta para cá na
+adubação de ~18/10.
+
+**Confirmação (mesmo dia):** troca às **15:00** (horário de Brasília), informada pelo dono.
+Desta planta: tudo até 14:59 de 01/10. Prints de 25/09→01/10 chegam pelo comando
+`/prints-flower-care` (celular, Remote Control); o dia 01/10 entra só com as horas antes das
+15h.
+
+---
+
+### 2026-10-01 — 🔴 Calor do substrato vira padrão repetido, não mais pico isolado (25–30/09)
+
+> Lote de 6 dias processado via `/prints-flower-care`. Detalhe completo (tabelas hora a
+> hora, metodologia) em [`../docs/historico-sensor-app.md`](../docs/historico-sensor-app.md)
+> (entrada 2026-10-01). Resumido aqui só o que muda o manejo.
+
+**Observado:**
+
+- **Temperatura do substrato passou de 40°C em 5 dos 6 dias, batendo perto de 48°C duas
+  vezes** (26/09: 47,0°C; 28/09: 47,7°C). O pico de 44,4°C em 21/09 — registrado em
+  2026-09-28 como "🟡 hipótese a observar, não conclusão" — **deixa de ser isolado**. Seis
+  dias seguidos com madrugada normal (19–22°C) e tarde disparando 20–25°C acima é um padrão,
+  não ruído de leitura.
+- Os dias de calor mais extremo (26 e 28/09) são também os de maior acúmulo de luz da
+  semana — consistente com sol direto forte e constante, não com defeito do sensor.
+- EC voltou a picos altos (665, 476, 461 µS/cm) **sem nenhuma adubação nova** (próxima
+  marcada ~18/10) — reforça que parte da leitura de EC crua sobe com o calor/umidade do
+  substrato, não só com sal (`docs/medicoes.md` §4). Não misturar com o pico de 725 µS/cm
+  do dia do adubo, que tinha causa conhecida.
+- Umidade sem padrão novo — queda suave entre rega/chuva, de 38–45% (25–26/09) a 20–25%
+  (27–30/09, mais seco e quente).
+
+**Concluído:** o calor extremo no substrato deixou de ser hipótese isolada — é um padrão
+que se repete quase todo dia de sol forte. 🟡 **Ainda não é diagnóstico de dano** (nenhuma
+foto recente mostra folha queimada ou murcha), mas a frequência justifica atenção ativa, não
+só "observar se aparecer".
+
+**Ação:**
+1. **Pedir uma foto/comentário específico da planta** na próxima janela de sol forte —
+   olhar folha nova e pontas de ramo, procurando sinal de queima ou murcha que não existia
+   nos checkpoints anteriores (17/09, 20/09).
+2. **Sem mudança de rega ainda** — vaso já é regado "substrato levemente úmido, nunca
+   encharcado" (regra desde 30/08); calor de superfície não necessariamente significa
+   déficit hídrico na zona radicular mais funda, que o sensor (sonda curta, ~5cm) não vê.
+   Se a próxima foto mostrar sinal de estresse, reavaliar frequência de rega nos dias de
+   sol forte, não só manter o padrão atual.
+3. **Nenhuma mudança na adubação** — o padrão de EC é consistente com artefato térmico, não
+   com necessidade de mais nutriente.
+
+**⚠️ Consequência da troca do sensor:** a partir de 01/10 15h o `hhcc-01` passa a medir a
+`pitanga-01` (ver nota acima). **A adubação de ~18/10 não vai ter curva de EC medida** para
+confirmar o efeito da dose correta (1 colher de sopa) — a comparação planejada com 18/09
+fica sem esse dado, a menos que o sensor volte antes dessa data. Avaliar com o dono perto
+de 18/10 se vale a pena mover o sensor de volta temporariamente.
+
+**Pendente:** fecha parcialmente a pendência "prints 25/09→01/10" (falta só a manhã de
+01/10, até 15h); decidir sobre o sensor voltar para a adubação de ~18/10 (ver acima);
+observar sinal de estresse térmico na próxima foto (reforça pendência já aberta em
+2026-09-28).
+
+**Correção (mesmo dia, 15:24):** a ponte `esp32-01` também começou hoje; as leituras dela na
+planilha antes da troca são testes de instalação e **ficam descartadas** (dono). O histórico
+numérico da acerola é **só o dos prints do Flower Care** (14/09 → 01/10 até 15h). Substitui a
+linha "01/10 → troca / Planilha" da tabela da entrada acima.
