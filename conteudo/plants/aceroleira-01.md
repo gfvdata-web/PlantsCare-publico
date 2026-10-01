@@ -14,8 +14,9 @@
 > **Próxima ação:** (1) **remover botão/flor observado em 20/09** (pinçar) → (2) **escolher e
 > amarrar o líder** ao tutor de bambu → (3) confirmar com o dono se a drenagem foi checada
 > antes do adubo de 18/09 → (4) estilização parada por pedido do dono → (5) observar sinal de
-> estresse térmico na próxima foto (pico de 44,4°C no substrato em 21/09, ver histórico
-> 2026-09-28)
+> estresse térmico na próxima foto (pico de 44,4°C no substrato em 21/09) → (6) **próxima
+> adubação ~2026-10-18** (30 dias, frequência do rótulo Forth Frutas), 1 colher de **sopa**
+> (25g), não de sobremesa
 > **Última atualização:** 2026-09-28
 
 ---
@@ -133,6 +134,10 @@ aplicam** a esta planta por enquanto. O que interessa medir é água e estresse.
       seguintes** — assinatura numérica clara do Forth Frutas agindo. Detalhe completo em
       [`../docs/historico-sensor-app.md`](../docs/historico-sensor-app.md) (entrada
       2026-09-28, "8 dias processados de uma vez").
+- [ ] **Próxima adubação: ~2026-10-18** (30 dias após 18/09, frequência oficial do rótulo Forth
+      Frutas) — usar **1 colher de SOPA (25g)**, a medida certa do rótulo (a de 18/09 foi de
+      sobremesa, menor). Aplicar a 20cm do tronco ao redor da copa, regar em seguida. Registrar
+      data exata e confirmar a medida usada, pra manter comparável com 18/09.
 
 ---
 
@@ -1010,3 +1015,125 @@ está em casa).
 **Pendente:** nenhuma fonte encontrada dá alvo numérico de EC específico pra acerola — se
 aparecer um artigo/extensão que meça isso diretamente (não via citros como proxy), atualizar
 §2. Seguir comparando o EC pós-próxima adubação com este baseline agora estabelecido.
+
+---
+
+### 2026-09-28 — Discussão sobre cadência do adubo: adiada até isolar o efeito da chuva; ⚠️ correção — "meia dose" nunca foi medida contra o rótulo
+
+> Continuação da entrada anterior (mesmo dia). Discussão pedida pelo dono sobre trocar o
+> padrão "meia dose espaçada" por "doses menores e mais frequentes", motivada pela leitura de
+> literatura de citros em vaso.
+
+**Decisão 1 — não mudar a cadência agora.** O decaimento rápido de EC observado (725→~230
+µS/cm em 4 dias) coincidiu com a mesma janela de chuva forte já registrada na ficha
+(2026-09-17 a 2026-09-20) — **confundidor real**: não dá pra saber quanto foi lixiviação
+"normal" de vaso pequeno (o padrão da literatura de citros) e quanto foi essa chuva
+específica lavando mais forte que o usual. **Só 1 aplicação registrada** não permite separar
+as duas causas.
+
+**Resolvido:** esperar a **próxima aplicação em janela sem chuva forte**, acompanhar o EC por
+~1 semana sem chuva no meio, e só então decidir se o decaimento rápido se repete de verdade
+(justificando doses menores/mais frequentes) ou se foi majoritariamente efeito da chuva
+daquela semana (não justificaria mudar o padrão).
+
+**⚠️ Correção 2 — a "meia dose" de 18/09 nunca foi medida contra o rótulo.** Ao perguntar
+sobre o formato de uma futura dose menor, o dono revelou que a aplicação de 18/09 (registrada
+em 2026-09-17/2026-08-20 como "Forth Frutas 12-05-15, meia dose") foi, na prática, **"uma
+colher de sobremesa do pózinho"** — uma medida de olho, não "metade do que o rótulo indica
+pro diâmetro do vaso" como a entrada de 2026-08-20 definia a regra. Isso **não invalida** os
+dados de EC já registrados (o sensor mediu o que mediu, independente da dose ter sido
+calculada ou chutada), mas **corrige o registro**: a suposta "meia dose" era, na verdade, uma
+quantidade **⚠️ não verificada contra o rótulo**. Esta entrada corrige, não apaga, a de
+2026-08-20 — regra de histórico append-only.
+
+**Consequência prática — próxima aplicação precisa ser medida.** Pra que a próxima leitura de
+EC seja comparável (e resolva a Decisão 1 acima), a próxima dose precisa ter quantidade
+**conhecida e registrada** — de duas formas, à escolha do dono:
+
+1. **Ler o rótulo do Forth Frutas** e calcular a quantidade real pro diâmetro/volume do vaso
+   atual (~25–34 L), aplicando meia dose **de fato**; ou
+2. Se preferir continuar por "colherada", **medir e registrar quantas colheres (de sobremesa,
+   ou a medida que for usar) e de quê** — pelo menos aí a próxima comparação é colher-contra-
+   colher, mesmo sem saber a relação exata com o rótulo.
+
+Sem uma das duas, o próximo dado de EC vira mais um ponto sem dose conhecida, e a decisão de
+cadência (Decisão 1) fica travada de novo.
+
+**Ação:** aguardar a próxima janela de aplicação sem chuva forte prevista; nessa aplicação,
+registrar a quantidade real usada (rótulo ou colheres, ver acima) antes de aplicar. Sem
+mudança de cadência até essa leitura de confirmação.
+
+**Pendente:** ver §5 — quantidade real da próxima aplicação (novo, prioridade — destrava a
+Decisão 1); demais itens sem mudança.
+
+**Confirmação (mesmo dia):** dono confirmou que a quantidade de 18/09 foi **exatamente 1
+colher de sobremesa** (não "algumas colheres" — uma só). Fica como baseline conhecido para
+comparação colher-contra-colher (opção 2 acima), mesmo sem saber a relação exata com o
+rótulo: a próxima aplicação já pode repetir "1 colher de sobremesa" (ou registrar quantas,
+se for diferente) e o EC resultante passa a ser comparável a este primeiro ponto.
+
+---
+
+### 2026-09-28 — ✅ Rótulo completo do Forth Frutas fotografado: frequência e dosagem oficiais resolvem a Decisão 1
+
+> Continuação da mesma conversa. O dono fotografou a seção "Recomendações de uso" do rótulo,
+> que não tinha sido capturada em 2026-08-20 (só o NPK havia sido registrado). Isso fecha a
+> pendência "próxima adubação: registrar quantidade real" com um dado melhor do que o
+> planejado — não precisa mais isolar o efeito da chuva por tentativa, o **próprio rótulo já
+> diz o intervalo**.
+
+**Observado (rótulo, seção "Recomendações de uso"):**
+
+- **Frequência: a cada 30 dias.** Regra do fabricante, não estimativa do projeto.
+- **Dosagem — "Frutíferas em vasos"** (é essa a seção aplicável, não "Frutas no solo" — a
+  aceroleira está em vaso): unidade = **1 colher de sopa = 25 g**.
+  | Vaso | Dose |
+  |---|---|
+  | 25L ou 30×30cm × altura | **1x** (25 g) |
+  | 100L ou 50×50cm | 2x ⚠️ (número exato do meio da tabela ficou ilegível na foto — 50g por analogia linear, a confirmar) |
+  | 500L ou 80×80cm ou maior | 3x (75 g) |
+
+  **O vaso da acerola (~25–34 L, 38cm ⌀ × 30cm) fica na borda da faixa "25L/30×30cm" → dose
+  recomendada = 1x = 1 colher de SOPA = 25 g.**
+- **Modo de aplicação:** espalhar sobre a terra a partir de **20 cm do tronco**, ao redor da
+  projeção da copa; regar em seguida até diluir e a água escoar pelo fundo do vaso.
+- Aviso do rótulo: não jogar o adubo nas folhas; regar imediatamente após aplicar.
+- Também existe uma tabela separada "Frutas no solo" por categoria de fruta (não pot-size) —
+  **acerola está listada ali** (junto com ameixa, banana, caqui, etc.): muda 25g / adulta
+  100g por planta. **Essa tabela não se aplica aqui** (é para pé de fruta plantado direto no
+  solo, não em vaso) — registrada só para não confundir numa consulta futura ao mesmo rótulo.
+
+**⚠️ Correção importante:** a aplicação de 18/09 usou **colher de sobremesa**, não **colher
+de sopa** como o rótulo especifica — são medidas diferentes (sobremesa é menor). A "meia
+dose" registrada em 2026-08-20 não foi uma metade calculada de propósito; foi,
+coincidentemente, menor que o "1x" oficial por causa da colher errada.
+
+**Concluído — resolve a Decisão 1 da entrada anterior:** não é mais necessário esperar uma
+janela de tempo sem chuva "no acaso" — o **intervalo mínimo entre aplicações já é definido
+pelo fabricante: 30 dias**. Aplicação de 18/09 + 30 dias = **próxima aplicação a partir de
+~2026-10-18**, não antes. Isso também resolve, de quebra, o confundidor chuva-vs-lixiviação:
+com dose e intervalo agora padronizados pelo rótulo, qualquer decaimento de EC observado após
+a próxima aplicação é comparável à de 18/09 com muito mais confiança, e a checagem de chuva
+na data (mais perto de outubro) continua valendo como cuidado adicional, não mais como o
+único critério.
+
+**Ação:** **não aplicar hoje (2026-09-28).** Próxima aplicação: **a partir de ~2026-10-18**,
+com **1 colher de sopa (25 g)** — a medida certa do rótulo, aplicada a 20cm do tronco ao
+redor da copa, regando em seguida. Registrar a data exata e confirmar que foi realmente
+colher de sopa (não de sobremesa) quando acontecer.
+
+**Pendente:** ver §5 — atualizar quando a aplicação de ~18/10 acontecer (data exata, dose
+confirmada); checar a previsão de chuva mais perto da data, mas não é mais bloqueio central.
+
+---
+
+### 2026-10-01 — Sensor passa a registrar sozinho a cada 15 min (ponte `esp32-01`)
+
+**Observado:** instalada a ponte [`esp32-01`](../equipamentos/esp32-01.md) numa tomada perto
+desta planta. Ela ouve o [`hhcc-01`](../equipamentos/hhcc-01.md) e envia a cada 15 min para a
+planilha `InfoSensorESP32` (Google Drive). Primeira escuta (fim de tarde): substrato
+28,2–29,0 °C, umidade 22 %, condutividade 189–191 µS/cm, luz 4.214→3.844 lux.
+
+**Consequência para esta ficha:** o histórico hora a hora deixa de depender de prints do
+Flower Care a partir de hoje — mas só entra no painel/pipeline quando a P32 (`PROJETO.md` §7)
+for feita. Até lá, os dados ficam na planilha.

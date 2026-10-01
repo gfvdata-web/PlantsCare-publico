@@ -229,6 +229,17 @@ GATT dedicada. Isso elimina o limite prático de "quantos sensores por vez" — 
 num único ESP32 sem esforço adicional, e simplifica o firmware (componente pronto do ESPHome,
 sem reproduzir o passo manual de escrever `A01F`).
 
+**Com o produto em mãos (2026-10-01) — o que a avaliação acertou e errou.** Detalhe em
+[`equipamentos/esp32-01.md`](../equipamentos/esp32-01.md).
+- ✅ Escuta passiva funciona: `hhcc-01` ouvido continuamente da tomada escolhida; WiFi −48 dBm.
+- ❌ Item 2: `web.esphome.io` **não** compila YAML próprio — foi preciso instalar ESPHome no PC.
+- ❌ "4 valores **+ bateria**" no anúncio: a bateria **não** chega na escuta passiva do
+  HHCCJCY01. Segue sendo lida pelo nRF Connect.
+- ❌ Cabo "carga e dados" do kit só carrega; chip USB é CH9102 (driver à parte); gravação
+  por USB exige modo download manual (BOOT+EN). Nada disso afeta a operação depois — OTA.
+- Destino das leituras mudou de PC (`aioesphomeapi`) para planilha Google
+  ([`decisoes.md`](decisoes.md), 2026-10-01).
+
 ---
 
 ## Log de produtos avaliados

@@ -81,6 +81,11 @@ Calculados na leitura, **nunca gravados** como leitura:
 
 ## 4. Módulos previstos (Fase 2)
 
+> ⚠️ **2026-10-01:** a coleta automática acabou **fora** destes módulos — o PC não alcança o
+> sensor e não fica ligado, então o `esp32-01` envia direto para a planilha `InfoSensorESP32`
+> ([`decisoes.md`](decisoes.md), [`captura-dados.md`](captura-dados.md) §4). `miflora_ble.py` e
+> `store.py` ficam parados; o elo que falta é planilha → `data/` (P32 em `PROJETO.md` §7).
+
 ```
 collectors/
 ├── miflora_ble.py      ← bleak, reproduz o que o Objetivo 1 fez à mão

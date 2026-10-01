@@ -41,7 +41,8 @@ Um nó por vaso ou por ambiente.
 
 - ➕ Controle total, dado 100% cru, **sonda longa possível**, sem pilha se for USB.
 - ➕ ESPHome elimina quase toda programação: YAML declarativo, OTA, MQTT nativo. O firmware
-  se grava **pelo navegador** (`web.esphome.io`, via USB) — sem instalar nada, sem soldar.
+  se grava via USB sem soldar — mas com **ESPHome instalado no PC**: o `web.esphome.io` só
+  grava firmware genérico, não compila YAML próprio (descoberto 2026-10-01).
 - ➖ Exige **vedação** para chuva direta e calibração manual das sondas analógicas.
 - Empurrado para a Fase 3 pela premissa "pronto agora, DIY depois". O gatilho que o
   justifica é **sonda longa** ou **VPD do ar**, não entusiasmo.
@@ -74,6 +75,7 @@ Para o que estiver fora do alcance de BLE/WiFi.
 | **BLE — manual, celular** | GATT via app explorador | nRF Connect | Não |
 | **BLE — automático, PC** | GATT ou advertising | Python **`bleak`** (roda no Windows) | Não |
 | **BLE → MQTT** | ESP32 escuta e republica | ESPHome `xiaomi_hhccjcy01`, Theengs Gateway | ESP32/RPi |
+| **BLE → HTTP → planilha** ✅ *em uso* | ESP32 escuta e faz POST periódico | ESPHome `xiaomi_hhccjcy01` + `http_request` → Apps Script | ESP32 (sem cérebro 24/7) |
 | **WiFi (DIY)** | dispositivo publica sozinho | ESPHome + MQTT | Broker |
 | **Zigbee** | coordenador USB | Sonoff ZBDongle-E + Zigbee2MQTT | Dongle |
 | **Sub-GHz** | gateway HTTP local ou SDR | Ecowitt GW1100, `rtl_433` | Sim |
@@ -119,7 +121,7 @@ tem zero experiência com hardware, então custo sozinho não decide.
 | Opção | Custo ⚠️ | Consumo | BLE nativo | Montagem real | Veredito |
 |---|---|---|---|---|---|
 | **Celular** | R$0 | — | ✅ | nenhuma | **Objetivo 1.** Explora bem, não loga (§5) |
-| **PC atual** | R$0 | — | ✅ verificado | nenhuma | **Fase 2.** Buraco no histórico quando desliga |
+| **PC atual** | R$0 | — | ✅ verificado | nenhuma | ~~**Fase 2.**~~ Buraco no histórico quando desliga — e não alcança o sensor (2026-09-20). Substituído pelo `esp32-01` → planilha (2026-10-01) |
 | **Raspberry Pi Zero 2 W** | R$250–400 | ~1–2 W (≈R$1/mês) | ✅ | gravar SD pelo *Raspberry Pi Imager* (já configura WiFi e SSH antes de ligar), encaixar, plugar. **Zero solda, zero terminal** | ✅ Melhor custo/benefício se a Fase 2 doer |
 | **Raspberry Pi 4 / 5** | R$500–1.200 | ~3–7 W | ✅ | idêntica ao Zero | Overkill agora |
 | **Mini-PC / thin client usado** | R$300–700 | ~8–15 W | ❌ → dongle USB (~R$30) | ligar, instalar Linux | Mais CPU por real, mais consumo e mais passos |
@@ -135,9 +137,21 @@ BLE atravessa mal parede e laje (~5–15 m na prática). Trocar Pi Zero por Pi 5
 [sensor varanda] ──BLE──► [ESP32 na tomada] ──WiFi/MQTT──► [cérebro] ──► banco
 ```
 
-ESP32 custa ~R$40, grava pelo navegador e só precisa de uma tomada USB perto das plantas.
+ESP32 custa ~R$40 e só precisa de uma tomada USB perto das plantas.
 ⚠️ O modo `bluetooth_proxy` do ESPHome depende do **Home Assistant**; para stack Python pura
-o caminho é o componente `xiaomi_hhccjcy01` + MQTT, que decodifica no próprio ESP32.
+o caminho é o componente `xiaomi_hhccjcy01`, que decodifica no próprio ESP32.
+
+**Implementado em 2026-10-01 sem cérebro 24/7** ([`decisoes.md`](decisoes.md)): o dono não tem
+PC sempre ligado, então o ESP32 faz o papel de "cérebro mínimo" e manda direto para a nuvem
+**própria** (planilha Google):
+
+```
+[hhcc-01] ──BLE──► [esp32-01 na tomada] ──WiFi/HTTPS, 15 min──► [Apps Script] ──► planilha InfoSensorESP32
+```
+
+Config: `esphome/plantscare-bridge-01.yaml` ·
+receptor: `google-apps-script/sensor-esp32/`.
+Limite aceito: sem internet, a leitura daquele intervalo se perde (a placa não guarda).
 
 ### Regra de decisão — para não comprar por ansiedade
 

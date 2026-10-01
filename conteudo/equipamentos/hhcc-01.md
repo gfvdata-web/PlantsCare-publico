@@ -9,7 +9,7 @@
 > **Instalado em:** [`aceroleira-01`](../plants/aceroleira-01.md), desde 2026-09-17 ⚠️ (data
 > exata da troca não confirmada, só informada nesta data). Antes, em
 > [`jabuticabeira-hibrida-01`](../plants/jabuticabeira-hibrida-01.md), 2026-08-23 → 2026-09-17.
-> **Última atualização:** 2026-09-20
+> **Última atualização:** 2026-10-01 — passa a ser ouvido 24/7 pelo [`esp32-01`](esp32-01.md)
 
 ---
 
@@ -230,3 +230,14 @@ momentos diferentes, registrando cada uma aqui e comparando com a rega/clima na 
 
 **Pendente:** 4 leituras adicionais; sanidade cruzada da umidade (alta logo após rega, baixa
 dias depois).
+
+### 2026-10-01 — Ouvido 24/7 pela ponte `esp32-01`; leituras vão para planilha
+
+**Observado:** o [`esp32-01`](esp32-01.md), na tomada perto da `aceroleira-01`, ouve este
+sensor por escuta passiva (sem conexão GATT, sem `A01F`): ~1 leitura por grandeza a cada ~40 s.
+Primeira escuta remota: 28,2–29,0 °C, umidade 22 %, condutividade 189–191 µS/cm, luz
+4.214→3.844 lux (fim de tarde). A ponte envia a cada 15 min para a planilha `InfoSensorESP32`.
+
+⚠️ **Bateria não vem na escuta passiva** — continuar lendo em `0x1A02` pelo nRF Connect.
+A escuta da ponte também **não substitui** as 4 leituras manuais que faltam no Objetivo 1
+(critério é captura pelo celular).

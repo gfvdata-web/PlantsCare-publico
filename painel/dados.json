@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-28",
+ "gerado_em": "2026-10-01",
  "plantas": [
   {
    "id": "aceroleira-01",
@@ -19,7 +19,8 @@
     "<strong>escolher e amarrar o líder</strong> ao tutor de bambu",
     "confirmar com o dono se a drenagem foi checada antes do adubo de 18/09",
     "estilização parada por pedido do dono",
-    "observar sinal de estresse térmico na próxima foto (pico de 44,4°C no substrato em 21/09, ver histórico 2026-09-28)"
+    "observar sinal de estresse térmico na próxima foto (pico de 44,4°C no substrato em 21/09)",
+    "<strong>próxima adubação ~2026-10-18</strong> (30 dias, frequência do rótulo Forth Frutas), 1 colher de <strong>sopa</strong> (25g), não de sobremesa"
    ],
    "atualizado": "2026-09-28",
    "pendencias": [
@@ -32,7 +33,8 @@
     "Remover flores/botões florais",
     "Eleger e amarrar o líder",
     "Captura crua via nRF Connect",
-    "Checar drenagem/encharcamento"
+    "Checar drenagem/encharcamento",
+    "Próxima adubação: ~2026-10-18"
    ],
    "ficha_url": "docs/plants/aceroleira-01/",
    "faixas": {

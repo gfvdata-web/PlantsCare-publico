@@ -6,14 +6,15 @@
 > variante aberta confirmada) — faltam mais 4 leituras em horários diferentes para fechar o
 > critério de conclusão. Detalhe em
 > [`docs/objetivo-1-captura-celular.md`](docs/objetivo-1-captura-celular.md).
-> 🟡 **Fase 2 iniciada, bloqueada no mesmo dia, contornada com plano de ESP32:** código do
-> coletor direto (`bleak` + SQLite) pronto em `collectors/` e `core/`, mas o **PC não alcança o
-> sensor pelo Bluetooth** e não pode ser movido para perto — testado ao vivo. Solução aprovada
-> no checklist: ESP32 como ponte BLE→WiFi (escuta passiva, sem MQTT — API nativa do ESPHome).
-> Config já pronta em `esphome/`. **`esp32-01` comprado em
-> 2026-09-20** (R$66,57, ver [`equipamentos/esp32-01.md`](equipamentos/esp32-01.md)), aguardando
-> entrega.
-> **Última atualização:** 2026-09-20 · **Dono:** Guilherme
+> 🟢 **Fase 2 em operação desde 2026-10-01, sem PC:** o PC não alcança o sensor pelo Bluetooth
+> (2026-09-20), então o **`esp32-01`** ([ficha](equipamentos/esp32-01.md)) fica na tomada perto
+> da aceroleira, ouve o `hhcc-01` por escuta passiva e envia a cada **15 min** por HTTPS para a
+> planilha `InfoSensorESP32` (Apps Script, Drive próprio). Sem PC sempre ligado → a placa manda
+> direto ([`decisoes.md`](docs/decisoes.md) 2026-10-01). Config em
+> `esphome/`, receptor em
+> `google-apps-script/sensor-esp32/`. O coletor
+> `bleak` + SQLite em `collectors/`/`core/` fica parado (não alcança o sensor). Falta **P32**.
+> **Última atualização:** 2026-10-01 · **Dono:** Guilherme
 
 ---
 
@@ -49,7 +50,7 @@ que isso não se repita.
 | 🛒 **Produto que se pensa em comprar** | [`docs/checklist-avaliacao.md`](docs/checklist-avaliacao.md) | O crivo a aplicar, na ordem certa |
 | 🛒 **Veredito de produtos já analisados** | [`docs/produtos-avaliados.md`](docs/produtos-avaliados.md) | Catálogo produto a produto, com links |
 | 🎯 **O objetivo ativo** — como capturar pelo celular | [`docs/objetivo-1-captura-celular.md`](docs/objetivo-1-captura-celular.md) | Procedimento passo a passo, UUIDs, decodificação |
-| 📡 **Como o dado sai do sensor** — BLE, WiFi, gateway, Raspberry | [`docs/captura-dados.md`](docs/captura-dados.md) | Caminhos de hardware, transportes, cérebro 24/7 |
+| 📡 **Como o dado sai do sensor** — BLE, WiFi, gateway, Raspberry | [`docs/captura-dados.md`](docs/captura-dados.md) | Caminhos de hardware, transportes, cérebro 24/7. **Em uso:** `esp32-01` → planilha `InfoSensorESP32` (`esphome/`, `google-apps-script/sensor-esp32/`) |
 | 📊 **Prints do app do sensor (Flower Care)** — reconstruir histórico hora a hora por foto de gráfico sem rótulo | [`docs/historico-sensor-app.md`](docs/historico-sensor-app.md) | Método de captura (várias colunas tocadas por dia) e de leitura (calibração por proporção de barra) |
 | 📏 **O que medir e por quê** — DLI, VPD, EC, umidade, pH | [`docs/medicoes.md`](docs/medicoes.md) | Fundamentos de medição e armadilhas |
 | 🧩 **Como agrupamos as plantas** | [`docs/regimes.md`](docs/regimes.md) | O modelo de regimes e por que ele existe |
@@ -157,8 +158,8 @@ pipeline — se divergirem, o markdown vence.
 | Fase | O que é | Estado |
 |---|---|---|
 | **Fase 0** | Cadastro documental — estrutura, fichas, avaliação de produtos | ✅ concluída |
-| **🎯 Fase 1** | **Objetivo 1**: 4 medidas cruas pelo celular, manual | 🟡 **aqui** — falta o sensor |
-| **Fase 2** | Automação no PC: `bleak`, SQLite, coleta a cada 15–30 min, Open-Meteo. Destrava **DLI** e curva de secagem | ⚪ depende da Fase 1 |
+| **🎯 Fase 1** | **Objetivo 1**: 4 medidas cruas pelo celular, manual | 🟡 sensor e dado cru confirmados; faltam 4 de 5 leituras manuais (P26) |
+| **Fase 2** | Coleta automática a cada 15 min, Open-Meteo. Destrava **DLI** e curva de secagem. Previsto no PC (`bleak` + SQLite); **feito via `esp32-01` → planilha** porque o PC não alcança o sensor e não fica ligado | 🟢 coleta rodando desde 2026-10-01; falta trazer a planilha para o pipeline (P32) |
 | **Fase 3** | Escala: máquina 24/7, ESP32 ponte, DIY com sonda longa, dashboard, interpretação automática | ⚪ só com dor medida |
 
 **Critério de avanço:** cada fase só começa quando a anterior gerou uma **dor real e
@@ -220,10 +221,10 @@ Respondidas: [`docs/decisoes.md`](docs/decisoes.md).
 | ~~**P24**~~ | ~~Em qual planta instalar o `hhcc-01` primeiro?~~ → ✅ **respondida 2026-08-23: `jabuticabeira-hibrida-01`**, decisão oportunista (dono estava no local B quando o sensor chegou) | Destravou a instalação; não destrava o Objetivo 1 inteiro — a captura crua segue parada (dono fora do local B) |
 | **P26** | Retomar o nRF Connect no `hhcc-01` — ✅ **executado 2026-09-20**: 1ª leitura crua feita, variante confirmada, decodificação manual validada, bateria lida. 🟡 **Segue aberta**: faltam mais 4 leituras em horários diferentes para fechar o critério de conclusão do Objetivo 1 | Objetivo 1 não pode ser dado como concluído enquanto não houver as 5 leituras — ver `docs/objetivo-1-captura-celular.md` |
 | ~~**P27**~~ | ~~Adicionar campo opcional "Observação" ao Forms?~~ → ✅ **respondida 2026-09-20: sim** — campos `Comentários` e `Comentários 2` (um por planta), usados na análise do status junto com a foto. Ver `docs/entrada-atualizacoes-planta.md` §2/§3 | — |
-
 | ~~**P29**~~ | ~~Harness comparando `gerar_relatorio_manual.py` (Claude Code) × API do Gemini para o relatório de IA~~ → ✅ **aprovada 2026-09-21**: `relatorios/ia_gemini.py` + `relatorios/harness_comparacao.py`, testado em 3 plantas, prompt ajustado em 5 rodadas até aprovação. Modelo `gemini-3.1-flash-lite` (só tier gratuito, decisão deliberada do dono). Ver `docs/decisoes.md` (2026-09-21) e `relatorios/saida/p29-resultado-2026-09-21.md` | — |
 | ~~**P30**~~ | ~~`gerar_relatorio.py` salvava o estado antes de confirmar o e-mail~~ → ✅ **corrigida 2026-09-20**: ordem alinhada com `gerar_relatorio_manual.py` — estado só é salvo depois de PDF + e-mail confirmarem | — |
 | **P31** | Automação ponta a ponta: Forms → ficha → síntese (Gemini) → PDF → e-mail, sem sessão interativa. **Implementado 2026-09-21** — ver `docs/decisoes.md`: repo `gfvdata-web/PlantsCare` (privado) no GitHub, `relatorios/gerar_relatorio_gemini.py` (3º caminho oficial), `relatorios/atualiza_automatico.py` + `relatorios/ia_gemini_diagnostico.py` (estágio 1 — só chama IA de foto se o comentário tiver a palavra-chave, ver `PALAVRAS_CHAVE_ANALISE`), `.github/workflows/pipeline.yml`. 🟡 **Aberto: workflow ainda é `workflow_dispatch` (manual) de propósito** — falta o dono rodar 1x, revisar o e-mail/commit, e decidir se troca para gatilho automático (`push` em `inbox/**`). Também falta configurar `GITHUB_TOKEN` no Apps Script (`google-apps-script/SETUP.md` §8) pra o Forms começar a commitar no repo | Decide se o pipeline final vira 100% automático (Forms dispara tudo sozinho) ou fica com esse "botão manual" de propósito |
+| **P32** | Trazer as leituras da planilha `InfoSensorESP32` para o repositório (`data/`) e para o painel público — ex.: GitHub Actions lendo a planilha periodicamente. Hoje o histórico automático só existe na planilha | Painel e relatório de IA seguem alimentados pelos prints do Flower Care até isso existir |
 
 **Mais adiante:** Home Assistant ou stack própria? · tolerância a manutenção recorrente ·
 formato de saída preferido (CLI, dashboard, notificação) · vale análise laboratorial de solo?
