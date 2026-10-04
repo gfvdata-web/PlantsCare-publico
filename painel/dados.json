@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-10-04",
- "sensor_ate": "2026-10-04 03:20",
+ "sensor_ate": "2026-10-04 11:51",
  "plantas": [
   {
    "id": "aceroleira-01",
@@ -5623,23 +5623,111 @@
        },
        {
         "h": 4,
-        "luz": 10.0,
-        "luz_q": "est",
+        "luz": 9.0,
+        "luz_q": "direto",
         "umid": 36.0,
-        "umid_q": "est",
+        "umid_q": "direto",
         "ec": 364.0,
-        "ec_q": "est",
-        "temp": 19.7,
-        "temp_q": "est"
+        "ec_q": "direto",
+        "temp": 19.6,
+        "temp_q": "direto"
+       },
+       {
+        "h": 5,
+        "luz": 8.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 365.0,
+        "ec_q": "direto",
+        "temp": 19.5,
+        "temp_q": "direto"
+       },
+       {
+        "h": 6,
+        "luz": 16.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 368.0,
+        "ec_q": "direto",
+        "temp": 19.2,
+        "temp_q": "direto"
+       },
+       {
+        "h": 7,
+        "luz": 161.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 364.0,
+        "ec_q": "direto",
+        "temp": 19.8,
+        "temp_q": "direto"
+       },
+       {
+        "h": 8,
+        "luz": 259.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 357.0,
+        "ec_q": "direto",
+        "temp": 21.1,
+        "temp_q": "direto"
+       },
+       {
+        "h": 9,
+        "luz": 288.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 345.0,
+        "ec_q": "direto",
+        "temp": 23.1,
+        "temp_q": "direto"
+       },
+       {
+        "h": 10,
+        "luz": 316.0,
+        "luz_q": "direto",
+        "umid": 37.0,
+        "umid_q": "direto",
+        "ec": 335.0,
+        "ec_q": "direto",
+        "temp": 25.1,
+        "temp_q": "direto"
+       },
+       {
+        "h": 11,
+        "luz": 3256.0,
+        "luz_q": "direto",
+        "umid": 38.0,
+        "umid_q": "direto",
+        "ec": 319.0,
+        "ec_q": "direto",
+        "temp": 28.1,
+        "temp_q": "direto"
+       },
+       {
+        "h": 12,
+        "luz": 4746.0,
+        "luz_q": "direto",
+        "umid": 38.0,
+        "umid_q": "direto",
+        "ec": 306.0,
+        "ec_q": "direto",
+        "temp": 30.9,
+        "temp_q": "direto"
        }
       ],
       "resumo": {
-       "umidade_max": 36.0,
+       "umidade_max": 38.0,
        "umidade_min": 36.0,
-       "ec_max": 364.0,
-       "ec_min": 358.0,
-       "temp_max": 20.4,
-       "temp_min": 19.6
+       "ec_max": 368.0,
+       "ec_min": 293.0,
+       "temp_max": 32.7,
+       "temp_min": 19.2
       }
      }
     ]
