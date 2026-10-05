@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-10-05",
- "sensor_ate": "2026-10-05 04:52",
+ "sensor_ate": "2026-10-05 15:53",
  "plantas": [
   {
    "id": "aceroleira-01",
@@ -5920,14 +5920,135 @@
         "ec_q": "direto",
         "temp": 20.7,
         "temp_q": "direto"
+       },
+       {
+        "h": 6,
+        "luz": 13.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 405.0,
+        "ec_q": "direto",
+        "temp": 20.6,
+        "temp_q": "direto"
+       },
+       {
+        "h": 7,
+        "luz": 191.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 400.0,
+        "ec_q": "direto",
+        "temp": 21.3,
+        "temp_q": "direto"
+       },
+       {
+        "h": 8,
+        "luz": 348.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 392.0,
+        "ec_q": "direto",
+        "temp": 22.6,
+        "temp_q": "direto"
+       },
+       {
+        "h": 9,
+        "luz": 985.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 380.0,
+        "ec_q": "direto",
+        "temp": 24.3,
+        "temp_q": "direto"
+       },
+       {
+        "h": 10,
+        "luz": 3614.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 370.0,
+        "ec_q": "direto",
+        "temp": 26.5,
+        "temp_q": "direto"
+       },
+       {
+        "h": 11,
+        "luz": 2636.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 374.0,
+        "ec_q": "direto",
+        "temp": 27.0,
+        "temp_q": "direto"
+       },
+       {
+        "h": 12,
+        "luz": 4096.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 367.0,
+        "ec_q": "direto",
+        "temp": 28.8,
+        "temp_q": "direto"
+       },
+       {
+        "h": 13,
+        "luz": 4475.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 354.0,
+        "ec_q": "direto",
+        "temp": 31.4,
+        "temp_q": "direto"
+       },
+       {
+        "h": 14,
+        "luz": 3748.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 373.0,
+        "ec_q": "direto",
+        "temp": 30.6,
+        "temp_q": "direto"
+       },
+       {
+        "h": 15,
+        "luz": 1383.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 411.0,
+        "ec_q": "direto",
+        "temp": 27.1,
+        "temp_q": "direto"
+       },
+       {
+        "h": 16,
+        "luz": 227.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 432.0,
+        "ec_q": "direto",
+        "temp": 25.3,
+        "temp_q": "direto"
        }
       ],
       "resumo": {
-       "umidade_max": 35.0,
+       "umidade_max": 37.0,
        "umidade_min": 35.0,
-       "ec_max": 406.0,
-       "ec_min": 400.0,
-       "temp_max": 21.5,
+       "ec_max": 437.0,
+       "ec_min": 344.0,
+       "temp_max": 33.1,
        "temp_min": 20.5
       }
      }
