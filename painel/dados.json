@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-10-07",
- "sensor_ate": "2026-10-07 13:56",
+ "sensor_ate": "2026-10-07 19:26",
  "plantas": [
   {
    "id": "aceroleira-01",
@@ -6575,14 +6575,81 @@
         "ec_q": "direto",
         "temp": 34.3,
         "temp_q": "direto"
+       },
+       {
+        "h": 15,
+        "luz": 4374.0,
+        "luz_q": "direto",
+        "umid": 38.0,
+        "umid_q": "direto",
+        "ec": 422.0,
+        "ec_q": "direto",
+        "temp": 36.0,
+        "temp_q": "direto"
+       },
+       {
+        "h": 16,
+        "luz": 4003.0,
+        "luz_q": "direto",
+        "umid": 38.0,
+        "umid_q": "direto",
+        "ec": 441.0,
+        "ec_q": "direto",
+        "temp": 34.9,
+        "temp_q": "direto"
+       },
+       {
+        "h": 17,
+        "luz": 3337.0,
+        "luz_q": "direto",
+        "umid": 38.0,
+        "umid_q": "direto",
+        "ec": 499.0,
+        "ec_q": "direto",
+        "temp": 30.1,
+        "temp_q": "direto"
+       },
+       {
+        "h": 18,
+        "luz": 326.0,
+        "luz_q": "direto",
+        "umid": 37.0,
+        "umid_q": "direto",
+        "ec": 555.0,
+        "ec_q": "direto",
+        "temp": 25.3,
+        "temp_q": "direto"
+       },
+       {
+        "h": 19,
+        "luz": 8.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 580.0,
+        "ec_q": "direto",
+        "temp": 23.2,
+        "temp_q": "direto"
+       },
+       {
+        "h": 20,
+        "luz": 7.0,
+        "luz_q": "est",
+        "umid": 36.0,
+        "umid_q": "est",
+        "ec": 580.0,
+        "ec_q": "est",
+        "temp": 22.9,
+        "temp_q": "est"
        }
       ],
       "resumo": {
-       "umidade_max": 38.0,
+       "luz_acum_mmol": 31260.0,
+       "umidade_max": 39.0,
        "umidade_min": 35.0,
-       "ec_max": 500.0,
-       "ec_min": 408.0,
-       "temp_max": 36.1,
+       "ec_max": 582.0,
+       "ec_min": 374.0,
+       "temp_max": 40.2,
        "temp_min": 22.0
       }
      }
