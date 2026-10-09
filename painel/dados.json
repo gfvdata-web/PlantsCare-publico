@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-10-09",
- "sensor_ate": "2026-10-09 13:29",
+ "sensor_ate": "2026-10-09 18:19",
  "plantas": [
   {
    "id": "aceroleira-01",
@@ -7123,23 +7123,79 @@
        },
        {
         "h": 14,
-        "luz": 3464.0,
-        "luz_q": "est",
+        "luz": 3697.0,
+        "luz_q": "direto",
+        "umid": 39.0,
+        "umid_q": "direto",
+        "ec": 332.0,
+        "ec_q": "direto",
+        "temp": 38.9,
+        "temp_q": "direto"
+       },
+       {
+        "h": 15,
+        "luz": 1140.0,
+        "luz_q": "direto",
         "umid": 38.0,
+        "umid_q": "direto",
+        "ec": 380.0,
+        "ec_q": "direto",
+        "temp": 35.2,
+        "temp_q": "direto"
+       },
+       {
+        "h": 16,
+        "luz": 23.0,
+        "luz_q": "est",
+        "umid": 36.0,
         "umid_q": "est",
-        "ec": 338.0,
+        "ec": 503.0,
         "ec_q": "est",
-        "temp": 37.7,
+        "temp": 21.8,
+        "temp_q": "est"
+       },
+       {
+        "h": 17,
+        "luz": 26.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 479.0,
+        "ec_q": "direto",
+        "temp": 22.3,
+        "temp_q": "direto"
+       },
+       {
+        "h": 18,
+        "luz": 10.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 459.0,
+        "ec_q": "direto",
+        "temp": 22.9,
+        "temp_q": "direto"
+       },
+       {
+        "h": 19,
+        "luz": 9.0,
+        "luz_q": "est",
+        "umid": 36.0,
+        "umid_q": "est",
+        "ec": 456.0,
+        "ec_q": "est",
+        "temp": 22.9,
         "temp_q": "est"
        }
       ],
       "resumo": {
-       "umidade_max": 38.0,
+       "luz_acum_mmol": 11762.0,
+       "umidade_max": 40.0,
        "umidade_min": 36.0,
-       "ec_max": 431.0,
-       "ec_min": 337.0,
-       "temp_max": 38.1,
-       "temp_min": 22.2
+       "ec_max": 504.0,
+       "ec_min": 312.0,
+       "temp_max": 42.5,
+       "temp_min": 21.6
       }
      }
     ]
