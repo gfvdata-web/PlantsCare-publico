@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-10-10",
- "sensor_ate": "2026-10-09 21:34",
+ "sensor_ate": "2026-10-10 04:44",
  "plantas": [
   {
    "id": "aceroleira-01",
@@ -7219,16 +7219,95 @@
         "ec_q": "direto",
         "temp": 22.5,
         "temp_q": "direto"
+       },
+       {
+        "h": 24,
+        "luz": 7.0,
+        "luz_q": "est",
+        "umid": 35.0,
+        "umid_q": "est",
+        "ec": 452.0,
+        "ec_q": "est",
+        "temp": 22.2,
+        "temp_q": "est"
        }
       ],
       "resumo": {
-       "luz_acum_mmol": 11785.0,
+       "luz_acum_mmol": 11792.0,
        "umidade_max": 40.0,
        "umidade_min": 35.0,
        "ec_max": 504.0,
        "ec_min": 312.0,
        "temp_max": 42.5,
        "temp_min": 21.6
+      }
+     },
+     {
+      "data": "2026-10-10",
+      "horas": [
+       {
+        "h": 1,
+        "luz": 7.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 452.0,
+        "ec_q": "direto",
+        "temp": 22.2,
+        "temp_q": "direto"
+       },
+       {
+        "h": 2,
+        "luz": 7.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 455.0,
+        "ec_q": "direto",
+        "temp": 21.9,
+        "temp_q": "direto"
+       },
+       {
+        "h": 3,
+        "luz": 7.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 456.0,
+        "ec_q": "direto",
+        "temp": 21.6,
+        "temp_q": "direto"
+       },
+       {
+        "h": 4,
+        "luz": 7.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 455.0,
+        "ec_q": "direto",
+        "temp": 21.8,
+        "temp_q": "direto"
+       },
+       {
+        "h": 5,
+        "luz": 7.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 452.0,
+        "ec_q": "direto",
+        "temp": 21.6,
+        "temp_q": "direto"
+       }
+      ],
+      "resumo": {
+       "umidade_max": 35.0,
+       "umidade_min": 35.0,
+       "ec_max": 460.0,
+       "ec_min": 448.0,
+       "temp_max": 22.3,
+       "temp_min": 21.5
       }
      }
     ]
