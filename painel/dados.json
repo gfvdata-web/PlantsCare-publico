@@ -1,6 +1,6 @@
 {
- "gerado_em": "2026-10-09",
- "sensor_ate": "2026-10-09 18:19",
+ "gerado_em": "2026-10-10",
+ "sensor_ate": "2026-10-09 21:34",
  "plantas": [
   {
    "id": "aceroleira-01",
@@ -7179,19 +7179,52 @@
        {
         "h": 19,
         "luz": 9.0,
-        "luz_q": "est",
+        "luz_q": "direto",
         "umid": 36.0,
-        "umid_q": "est",
+        "umid_q": "direto",
         "ec": 456.0,
-        "ec_q": "est",
-        "temp": 22.9,
-        "temp_q": "est"
+        "ec_q": "direto",
+        "temp": 22.8,
+        "temp_q": "direto"
+       },
+       {
+        "h": 20,
+        "luz": 8.0,
+        "luz_q": "direto",
+        "umid": 36.0,
+        "umid_q": "direto",
+        "ec": 454.0,
+        "ec_q": "direto",
+        "temp": 22.7,
+        "temp_q": "direto"
+       },
+       {
+        "h": 21,
+        "luz": 8.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 451.0,
+        "ec_q": "direto",
+        "temp": 22.6,
+        "temp_q": "direto"
+       },
+       {
+        "h": 22,
+        "luz": 7.0,
+        "luz_q": "direto",
+        "umid": 35.0,
+        "umid_q": "direto",
+        "ec": 452.0,
+        "ec_q": "direto",
+        "temp": 22.5,
+        "temp_q": "direto"
        }
       ],
       "resumo": {
-       "luz_acum_mmol": 11762.0,
+       "luz_acum_mmol": 11785.0,
        "umidade_max": 40.0,
-       "umidade_min": 36.0,
+       "umidade_min": 35.0,
        "ec_max": 504.0,
        "ec_min": 312.0,
        "temp_max": 42.5,
